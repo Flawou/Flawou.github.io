@@ -1,0 +1,86 @@
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../style.css">
+    <base target="_parent">
+    <title data-trilium-title>Active Directory / LDAP</title>
+  </head>
+  
+  <body>
+    <div class="content">
+       <h1 data-trilium-h1>Active Directory / LDAP</h1>
+
+      <div class="ck-content">
+        <p>&nbsp;</p>
+        <p>
+          <br><strong>LDAP (Lightweight Directory Access Protocol) et Active Directory sont deux concepts liés à la gestion des annuaires et de la sécurité dans les environnements informatiques Windows.</strong>
+        </p>
+        <ol>
+          <li><span class="text-big" style="color:hsl(240,75%,60%);"><strong>LDAP (Lightweight Directory Access Protocol)</strong></span>
+            <span
+            class="text-big" style="color:hsl(0,0%,0%);"><strong> : </strong>
+              </span><strong>LDAP est un protocole de communication standard utilisé pour accéder et gérer des services d'annuaires informatiques. Il est principalement utilisé pour rechercher et récupérer des informations à partir de bases de données d'annuaires, telles que les annuaires d'utilisateurs, les annuaires d'entreprises et d'autres données de répertoire. LDAP est un protocole léger et efficace qui fonctionne sur le modèle client-serveur.</strong>
+          </li>
+          <li><span class="text-big" style="color:hsl(240,75%,60%);"><strong>Active Directory</strong></span>
+            <span
+            class="text-big" style="color:hsl(0,0%,0%);"><strong> :</strong>
+              </span><span style="color:hsl(0,0%,0%);"><strong> </strong></span><strong>Active Directory est un service d'annuaire développé par Microsoft. Il est utilisé pour gérer et organiser des ressources réseau, telles que des ordinateurs, des utilisateurs, des groupes, des imprimantes, des serveurs, et bien d'autres, au sein d'un environnement Windows. Active Directory est un composant clé des systèmes d'exploitation Windows Server et est utilisé pour l'authentification, l'autorisation, la gestion des politiques de sécurité et bien d'autres tâches liées à la gestion de réseau.</strong>
+          </li>
+        </ol>
+        <p style="margin-left:0px;">En relation avec Active Directory, LDAP est utilisé comme protocole de
+          communication pour interagir avec les annuaires Active Directory. LDAP
+          permet aux administrateurs de rechercher des objets Active Directory, de
+          les créer, de les modifier ou de les supprimer. C'est un moyen standardisé
+          et largement utilisé pour interagir avec les données stockées dans Active
+          Directory.</p>
+        <p style="margin-left:0px;">Voici comment cela fonctionne généralement :</p>
+        <ul>
+          <li>Les clients LDAP envoient des requêtes LDAP au serveur Active Directory.</li>
+          <li>Le serveur Active Directory répond aux requêtes en renvoyant les informations
+            demandées, telles que des détails sur les utilisateurs, les groupes, les
+            ordinateurs, etc.</li>
+          <li>LDAP peut également être utilisé pour effectuer des opérations de création,
+            de mise à jour ou de suppression d'objets dans Active Directory, sous réserve
+            des autorisations appropriées.</li>
+        </ul>
+        <p style="margin-left:0px;">En résumé, LDAP est un protocole de communication utilisé pour accéder
+          et gérer des annuaires, tandis qu'Active Directory est un service d'annuaire
+          spécifique à Microsoft qui utilise LDAP comme protocole sous-jacent pour
+          fournir des fonctionnalités de gestion d'annuaire dans les environnements
+          Windows.</p>
+        <h2 style="margin-left:0px;"><strong>Qu’est-ce que l’authentification LDAP&nbsp;?</strong></h2>
+        <p style="margin-left:0px;">LDAP v3 propose deux options pour l’authentification LDAP – simple et
+          SASL (Simple Authentification and Security Layer).</p>
+        <p style="margin-left:0px;">L’authentification simple permet de mettre en œuvre trois mécanismes possibles
+          d’authentification :</p>
+        <figure class="image">
+          <img src="https://info.varonis.com/hs-fs/hubfs/Imported_Blog_Media/AD-vs-LDAP_French-1-scaled.jpg?width=2560&amp;height=1275&amp;name=AD-vs-LDAP_French-1-scaled.jpg"
+          alt="Les 3 mécanismes possibles d'authentification Authentification anonyme Authentification non authentifiée Authentification par Nom/mot de passe">
+        </figure>
+        <p>&nbsp;</p>
+        <ul>
+          <li><strong>Authentification anonyme&nbsp;:</strong> accorde au client un statut
+            anonyme pour accéder aux services LDAP.</li>
+          <li><strong>Authentification non authentifiée</strong>&nbsp;: uniquement à
+            des fins de journalisation, ne doit pas accorder d’accès au client.</li>
+          <li><strong>Authentification par nom/mot de passe</strong>&nbsp;: accorde
+            un accès au serveur en se basant sur les identifiants fournis – une simple
+            authentification par nom/mot de passe n’est pas sécurisée et ne convient
+            pas à une authentification dans les environnements sans protection de la
+            confidentialité.</li>
+        </ul>
+        <p>&nbsp;</p>
+        <p><span style="background-color:rgb(255,255,255);color:hsl(0,75%,60%);"><strong>Il est important de noter que LDAP transmet par défaut tous ces messages en texte clair, ce qui fait que n’importe qui peut lire les paquets en utilisant un renifleur réseau. Vous devez ajouter un chiffrement de type TLS pour préserver la confidentialité de vos noms d’utilisateur et de vos mots de passe.</strong></span>
+        </p>
+        <p>&nbsp;</p>
+        <p><span style="background-color:rgb(255,255,255);color:hsl(0,0%,0%);"><strong>gpo = harmonisation gestion groupe utilisateur&nbsp;</strong></span>
+        </p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+      </div>
+    </div>
+  </body>
+
+</html>

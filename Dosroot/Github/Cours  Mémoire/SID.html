@@ -1,0 +1,70 @@
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../style.css">
+    <base target="_parent">
+    <title data-trilium-title>SID</title>
+  </head>
+  
+  <body>
+    <div class="content">
+       <h1 data-trilium-h1>SID</h1>
+
+      <div class="ck-content">
+        <p><span class="text-big" style="color:hsl(240,75%,60%);"><strong><u>Security Identifier (Identifiant de Sécurité)</u></strong></span>
+          <span
+          class="text-big"><strong><u> </u></strong>
+            </span><strong>: &nbsp;un SID est un identifiant unique attribué à chaque compte utilisateur, groupe ou objet de sécurité dans un système d'exploitation Windows. Les SIDs sont utilisés pour contrôler l'accès aux ressources et aux fichiers, ainsi que pour identifier les utilisateurs et les groupes dans un domaine Windows.</strong>
+        </p>
+        <p><strong>un Security Identifier (SID) est un composant essentiel de la sécurité des systèmes d'exploitation Windows, utilisé pour identifier de manière unique les utilisateurs, les groupes et les objets de sécurité, ainsi que pour déterminer les autorisations d'accès aux ressources du système.</strong>
+        </p>
+        <p><strong>exemple de différent sid &nbsp;(sid type complet:</strong>  <strong>S-1-5-21–7623811015-3361044348-030300820-1013)</strong>
+        </p>
+        <figure class="image">
+          <img src="1_SID_image.png">
+        </figure>
+        <figure class="image">
+          <img src="SID_image.png">
+        </figure>
+        <p>&nbsp;</p>
+        <ul>
+          <li><span class="text-big" style="color:hsl(240,75%,60%);"><strong>Active Directory</strong></span>
+          </li>
+        </ul>
+        <p style="margin-left:0px;"><strong>Le principe est assez similaire dans AD tous les objets disposent d’un SID unique. Le SID est composé d’un security principal domain SID comme préfixe et d’un&nbsp;</strong>
+          <a
+          href="http://social.technet.microsoft.com/wiki/contents/articles/16757.active-directory-glossary.aspx#RID"><strong>RID</strong>
+            </a><strong> (Relative Identifier) comme suffixe.</strong>
+        </p>
+        <p style="margin-left:0px;"><strong>Les RIDs sont gérés dans chaque domaine Active Directory par le maître RID. Il s’agit d’un Contrôleur de Domaine qui alloue une plage de RIDs pour chaque contrôleur de domaine se trouvant dans le même domaine Active Directory. Par défaut, une plage RID attribuée contient 500 RIDs.</strong>
+        </p>
+        <p style="margin-left:0px;"><strong>Afin de faciliter les migration on peut aussi attribuer les anciens SIDs (SID History) pour garder les accès aux anciennes ressources durant la transition. Ceci est effectué par l’outil ADMT (Active Directory Migration tool).</strong>
+        </p>
+        <ul>
+          <li><span style="color:hsl(240,75%,60%);"><strong>Où sont stockés&nbsp;les SIDs dans Active Directory?</strong></span>
+          </li>
+        </ul>
+        <p style="margin-left:0px;"><strong>Les SIDs sont stockés dans deux attributs:</strong>
+        </p>
+        <ul>
+          <li><strong>objectSid:&nbsp;Ceci est le security Principal SID qui est généré pendant la création de l’objet</strong>
+          </li>
+          <li><strong>sIDHistory:&nbsp;Ces SIDs sont ceux migrés des anciens domaines (SID History)</strong>
+          </li>
+        </ul>
+        <p style="margin-left:0px;"><strong>Important :</strong>
+        </p>
+        <p style="margin-left:0px;"><strong>Renommer un compte ne change pas son SID,</strong>
+        </p>
+        <p style="margin-left:0px;"><strong>Recréer un compte utilisateur avec le même nom ne reprendra pas le même SID.</strong>
+        </p>
+        <p style="margin-left:0px;">&nbsp;</p>
+        <p style="margin-left:0px;"><strong>lien sid connu : </strong><a href="https://msdn.microsoft.com/en-us/library/cc980032.aspx"><strong>https://msdn.microsoft.com/en-us/library/cc980032.aspx</strong></a>
+        </p>
+      </div>
+    </div>
+  </body>
+
+</html>

@@ -1,0 +1,70 @@
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../../style.css">
+    <base target="_parent">
+    <title data-trilium-title>Install + Config DHCP</title>
+  </head>
+  
+  <body>
+    <div class="content">
+       <h1 data-trilium-h1>Install + Config DHCP</h1>
+
+      <div class="ck-content">
+        <p><strong>Ouvrir le gestionaire de serveur&nbsp;</strong>
+        </p>
+        <p><strong>Cliquer sur ajouter des rôles</strong>
+        </p>
+        <figure class="image">
+          <img src="Install + Config DHCP_image.pn">
+        </figure>
+        <p><strong>Cliquez sur suivant jusqu'à atteindre le choix du serveur et choisir son rôle ( ici DHCP ) puis suivant jusqu'à terminer la configuration.</strong>
+        </p>
+        <p><strong>Puis cliquer sur DHCP et clique droit sur le serveur &gt; gestionaire DHCP</strong>
+        </p>
+        <figure class="image image-style-block-align-left">
+          <img src="https://user.oc-static.com/upload/2018/11/29/1543514302363_image13.png"
+          alt="Lancement du Gestionnaire DHCP">
+        </figure>
+        <p><strong>Vous trouverez toutes les options pour configurer ce rôle :</strong>
+          <img
+          src="https://user.oc-static.com/upload/2018/11/29/1543514323117_image17.png"
+          alt="Gestionnaire DHCP">
+        </p>
+        <p><strong>Nous allons créer notre première étendue, pour cela, clic droit IPv4 sous le nom du serveur, puis “Nouvelle étendue”&nbsp;, puis choisir la plage ip en fonction des besoins, ne pas oublier la passarelle dans le compte&nbsp;</strong>
+        </p>
+        <figure class="image">
+          <img src="https://user.oc-static.com/upload/2022/12/21/1671633242109_unnamed%20%2834%29.png"
+          alt="Plage d’adresse">
+        </figure>
+        <p><strong>Avancer puis choisir la durée du bail en fonction des besoins puis, en poursuivant l’assistant, vous êtes guidé dans les options les plus utiles à paramétrer&nbsp;:</strong>
+        </p>
+        <ul>
+          <li><strong>routeur (passerelle par défaut) ;</strong>
+          </li>
+          <li><strong>nom de domaine et serveurs DNS ;&nbsp;</strong>
+          </li>
+          <li><strong>serveurs WINS.</strong>
+          </li>
+        </ul>
+        <p style="margin-left:0px;"><strong>Ici nous allons simplement mettre le routeur.&nbsp;</strong>
+        </p>
+        <p style="margin-left:0px;"><strong>Pour finir, activer l'étendue.</strong>
+        </p>
+        <figure class="image">
+          <img src="https://user.oc-static.com/upload/2018/11/29/15435145849279_image2.png"
+          alt="Activation de votre étendue">
+        </figure>
+        <p><strong>Afin de fonctionner correctement, il reste une dernière étape à mettre en œuvre&nbsp;: autoriser les flux au niveau du pare-feu Windows. &nbsp;Aller dans les outils d’administration (dans le menu Démarrer) et ouvrez le “Pare-feu Windows avec fonctions avancées de sécurité”.&nbsp;Créez une “Règle de trafic entrant” en spécifiant le protocole UDP sur les ports 67 et 68, puis autorisez ce flux et nommez la règle DHCP par exemple.</strong>
+        </p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+      </div>
+    </div>
+  </body>
+
+</html>

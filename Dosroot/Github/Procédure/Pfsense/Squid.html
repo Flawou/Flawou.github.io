@@ -1,0 +1,105 @@
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../../style.css">
+    <base target="_parent">
+    <title data-trilium-title>Squid</title>
+  </head>
+  
+  <body>
+    <div class="content">
+       <h1 data-trilium-h1>Squid</h1>
+
+      <div class="ck-content">
+        <p>&nbsp;</p>
+        <p>Nous allons commencer par installer le packet SQUID, pour cela cliquer
+          sur System puis Package Manager</p>
+        <figure class="image">
+          <img src="Squid_image-21.png">
+        </figure>
+        <p>Ensuite nous tapons squid dans la recherche et installons le packages
+          squid&nbsp;</p>
+        <figure class="image">
+          <img src="Squid_image-23.png">
+        </figure>
+        <p>Nous allons ensuite dans System et Certificates, on entre le nom et choisir
+          l'option de création de CA</p>
+        <figure class="image">
+          <img src="Squid_image-26.png">
+        </figure>
+        <p>Puis une fois créer nous devrions voir le certificat apparaître, nous
+          allons alors cliquer sur l'étoile pour télécharger notre certificat</p>
+        <figure
+        class="image">
+          <img src="Squid_image-27.png">
+          </figure>
+          <p>&nbsp;</p>
+          <p>puis installer celui-ci</p>
+          <figure class="image">
+            <img src="Squid_image-30.png">
+          </figure>
+          <figure class="image">
+            <img src="Squid_image-31.png">
+          </figure>
+          <p>l'installer puis choisir utilisateur actuel</p>
+          <p>choisir où l'on place nos certificats&nbsp;</p>
+          <figure class="image">
+            <img src="Squid_image-33.png">
+          </figure>
+          <p>chemin d'accès :</p>
+          <figure class="image">
+            <img src="Squid_image-34.png">
+          </figure>
+          <p>puis terminer l'installation</p>
+          <p>Puis aller dans services, Squid Proxy et cocher Check to enable the Squid
+            Proxy&nbsp;</p>
+          <figure class="image">
+            <img src="Squid_image-40.png">
+          </figure>
+          <p>Activer le dns</p>
+          <figure class="image">
+            <img src="Squid_image-41.png">
+          </figure>
+          <p>Activer le transparent Proxy</p>
+          <figure class="image">
+            <img src="1_Squid_image-42.png">
+          </figure>
+          <p>et le ssl, ne pas oublier de sélectionner Splice All et de choisir notre
+            <span
+            style="color:hsl(0, 75%, 60%);"><strong>CA</strong>
+              </span>&nbsp;</p>
+          <figure class="image">
+            <img src="Squid_image-43.png">
+          </figure>
+          <p>Nous pouvons modifier notre hostmail ici en cas de nécessité de contact
+            par un utilisateur ( choisir fr dans Error language)</p>
+          <figure class="image">
+            <img src="Squid_image-45.png">
+          </figure>
+          <p>Nous allons maintenant ajouter notre réseaux LAN dans le filtrage ACLs</p>
+          <figure
+          class="image">
+            <img src="Squid_image.png">
+            </figure>
+            <p>puis les sites que nous voulons blacklister&nbsp;</p>
+            <figure class="image">
+              <img src="1_Squid_image.png">
+            </figure>
+            <p>Nous allons ajouter les régles d'utilisation pour notre pare-feu, celà
+              est nécessaire pour forcer les utilisateurs à utilisers notre proxy&nbsp;</p>
+            <figure
+            class="image">
+              <img src="2_Squid_image.png">
+              </figure>
+              <p>Ne pas oublier de descendre le certificats sur nos sessions clients et
+                d'activer le proxy&nbsp;</p>
+              <figure class="image">
+                <img src="3_Squid_image.png">
+              </figure>
+      </div>
+    </div>
+  </body>
+
+</html>

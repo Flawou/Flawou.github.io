@@ -1,0 +1,45 @@
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../../style.css">
+    <base target="_parent">
+    <title data-trilium-title>SSH Secure</title>
+  </head>
+  
+  <body>
+    <div class="content">
+       <h1 data-trilium-h1>SSH Secure</h1>
+
+      <div class="ck-content">
+        <p>sur server</p>
+        <p>apt install openssh-server</p>
+        <p>systemctl start ssh</p>
+        <p>systemctl status ssh</p>
+        <p>sur client&nbsp;</p>
+        <p>ssh -V</p>
+        <p>ssh user@ip</p>
+        <figure class="image image-style-block-align-left">
+          <img src="SSH Secure_image.png">
+        </figure>
+        <p>Pour créer nos clés de sécurités SSH :&nbsp;</p>
+        <p>ssh-keygen (<span style="color:hsl(0, 75%, 60%);">NON CONNECTER SSH</span>)</p>
+        <figure
+        class="image image-style-block-align-left">
+          <img src="1_SSH Secure_image.png">
+          </figure>
+          <p>ssh-copy-id user@192.168.X.X (NON CONNECTER SSH)</p>
+          <p>changer le port d'écoute</p>
+          <p>PermitRootLogin no</p>
+          <p>nano /etc/ssh/sshd_config</p>
+          <p>décommentez Port 22</p>
+          <p>modifier le port ( exemple 2222)</p>
+          <p>depuis client pour s'y connecter : ssh user@192.168.217.10 -p 2222</p>
+          <p>allowUsers user1</p>
+          <p>&nbsp;</p>
+      </div>
+    </div>
+  </body>
+
+</html>

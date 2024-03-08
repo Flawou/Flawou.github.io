@@ -1,0 +1,59 @@
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../style.css">
+    <base target="_parent">
+    <title data-trilium-title>DHCP</title>
+  </head>
+  
+  <body>
+    <div class="content">
+       <h1 data-trilium-h1>DHCP</h1>
+
+      <div class="ck-content">
+        <p><strong>Le DHCP (Dynamic Host Configuration Protocol)</strong>
+        </p>
+        <p><strong>il s'agit d'un protocole qui permet à un ordinateur qui se connecte sur un réseau d'obtenir automatiquement sa configuration réseau ( par exemple, adresse ip, masque de sous-réseau et passerelle par défaut) si l'ordinateur est paramétrer&nbsp;en attribution automatique.</strong>
+        </p>
+        <p><strong>Bien que l’introduction d’IPV6 ait atténué la pénurie d’adresses IP, les FAI utilisent fréquemment DHCP parce qu’il est plus rentable que l’attribution d’adresses IP statiques.</strong>
+        </p>
+        <p><span class="text-big" style="color:hsl(240,75%,60%);"><strong>Son fonctionnement:</strong></span>
+        </p>
+        <ul>
+          <li><strong>1. DHCPDiscover : Un client vient de se connecter au réseau. Il émet une requête à tout le réseau pour savoir si un serveur DHCP peut lui attribuer une adresse. À&nbsp;ce stade, le seul moyen d’identification qu’a le client est son adresse MAC. La requête est donc envoyée à tout le réseau, avec comme adresse source, l’adresse MAC du client.</strong>
+          </li>
+          <li><strong>2. DHCPOffer : Le serveur DHCP reçoit le message et répond au client en lui fournissant une adresse IP.Ce message contenant l’adresse IP est envoyé à destination de l’adresse MAC du client.</strong>
+          </li>
+          <li><strong>3.&nbsp;DHCPRequest : Le client accepte l’offre et demande au serveur de lui envoyer en confirmation un message contenant tous les paramètres de configuration, et d’enregistrer l’IP allouée.</strong>
+          </li>
+          <li><strong>4. DHCPAck : Le serveur envoie le message de confirmation et met à jour sa table d’allocation d’IP.</strong>
+          </li>
+        </ul>
+        <p style="margin-left:0px;">&nbsp;</p>
+        <p style="margin-left:0px;">&nbsp;</p>
+        <p><span class="text-big" style="color:hsl(240,75%,60%);"><strong>&nbsp;</strong></span>
+          <img
+          src="https://user.oc-static.com/upload/2021/06/03/16227097553456_P3C1-1.png"
+          alt="Principe d'échanges entre client et serveur DHCP en 4 étapes : découverte, offre, requête et acquittement">
+        </p>
+        <p><span class="text-big" style="color:hsl(240,75%,60%);"><strong>Raison utilisation:</strong></span>
+        </p>
+        <p><strong>Bien que l’introduction d’IPV6 ait atténué la pénurie d’adresses IP, les FAI utilisent fréquemment DHCP parce qu’il est plus rentable que l’attribution d’adresses IP statiques.</strong>
+        </p>
+        <p><strong>Supprimer le risque de mauvaise manipulation lors de la configuration réseau de vos équipements, et apporterez&nbsp;donc une fiabilité dans votre réseau</strong>
+        </p>
+        <p><span class="text-big" style="color:hsl(240,75%,60%);"><strong>Ses ports :&nbsp;</strong></span>
+        </p>
+        <ul>
+          <li>Port 67 : &nbsp;Port client</li>
+          <li>Port 68 : Port serveur</li>
+        </ul>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+      </div>
+    </div>
+  </body>
+
+</html>

@@ -1,0 +1,33 @@
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../../../style.css">
+    <base target="_parent">
+    <title data-trilium-title>Switch configuration basique + SSH</title>
+  </head>
+  
+  <body>
+    <div class="content">
+       <h1 data-trilium-h1>Switch configuration basique + SSH</h1>
+
+      <div class="ck-content">
+        <p>reset → No&nbsp;</p>
+        <p>enable &gt; conf t &gt; hostname R1 &gt; enable secret secret &gt; enable
+          password root&nbsp;</p>
+        <p>conf t &gt; interface vlan 1 &gt; ip address X.X.X.X X.X.X.X&nbsp;</p>
+        <p>conf t &gt; interface fa0/1 &gt; switchport access vlan 1 &gt; switchport
+          mode access</p>
+        <p>conf t &gt; ip domain-name tssr.local &gt; crypto key generate rsa &gt;
+          1024 &gt; ip ssh version 2</p>
+        <p>line vty 0 4 &gt; transport input ssh &gt; login local &gt; username user
+          password user &gt;&nbsp;</p>
+        <p>write memory ou copy running-config startup-config</p>
+        <p>&nbsp;</p>
+        <p>service password-encryption&nbsp;</p>
+      </div>
+    </div>
+  </body>
+
+</html>

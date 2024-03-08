@@ -1,0 +1,96 @@
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../../style.css">
+    <base target="_parent">
+    <title data-trilium-title>Proc Xivo</title>
+  </head>
+  
+  <body>
+    <div class="content">
+       <h1 data-trilium-h1>Proc Xivo</h1>
+
+      <div class="ck-content">
+        <ul>
+          <li><span class="text-big"><strong>installer l'iso de Xivo dans un premier lieu (iso)</strong></span>
+          </li>
+          <li><span class="text-big"><strong>ensuite récupérer l'ip de la carte réseau (ici c'est 192.168.240.148)</strong></span>
+          </li>
+        </ul>
+        <figure class="image">
+          <img src="Proc%20Xivo/image.png">
+        </figure>
+        <ul>
+          <li><span class="text-big"><strong>dans le navigateur web de sa machine, rentrer l'adresse IP pour accéder au panel de Xivo</strong></span>
+          </li>
+          <li><span class="text-big"><strong>cliquer sur suivant</strong></span>
+          </li>
+          <li><span class="text-big"><strong>accepter les termes d'utilisation de Xivo</strong></span>
+          </li>
+        </ul>
+        <figure class="image">
+          <img src="Proc%20Xivo/1_image.png">
+        </figure>
+        <ul>
+          <li><span class="text-big"><strong>dans la page suivante:</strong></span>
+            <ul>
+              <li><span class="text-big"><strong>Rentrer le nom d'hôte</strong></span>
+              </li>
+              <li><span class="text-big"><strong>indiquer le domaine (ici c'est tssr.local)</strong></span>
+              </li>
+              <li><span class="text-big"><strong>mettre un mot de passe administrateur pour accéder au panel (ici c'est root)</strong></span>
+              </li>
+              <li><span class="text-big"><strong>rentrer 1.1.1.1 comme DNS (ou notre DNS si on en a un)</strong></span>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <figure class="image">
+          <img src="Proc%20Xivo/2_image.png">
+        </figure>
+        <ul>
+          <li><span class="text-big"><strong>Ensuite:</strong></span>
+            <ul>
+              <li><span class="text-big"><strong>Entrer ce qui servira de nom de serveur (ici c'est XivoSilver)</strong></span>
+              </li>
+              <li><span class="text-big"><strong>Entrer une intervalle de numéros utilisé pour les numéros internes (ici 100-200)</strong></span>
+              </li>
+              <li><span class="text-big"><strong>Pareil pour les appels entrants (ici c'est 1000-2000)</strong></span>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <figure class="image">
+          <img src="Proc%20Xivo/3_image.png">
+        </figure>
+        <ul>
+          <li><span class="text-big"><strong>Je vérifie que ce que j'ai entré est bon puis je valide</strong></span>
+          </li>
+          <li><span class="text-big"><strong>je me reconnecte a Xivo et il est prêt !</strong></span>
+          </li>
+          <li><span class="text-big"><strong>A SAVOIR: Pour contacter un mobile, il faut que la VM qui contienne le serveur XIVO soit sur le même réseau que l'appareil:</strong></span>
+            <ul>
+              <li><span class="text-big"><strong>Pour ça, on peut passer la VM en bridge et utiliser le réseau wifi sur lequel le portable est (ou un point d'accès par partage de connexion 4G entre le portable et le serveur)</strong></span>
+              </li>
+              <li><span class="text-big"><strong>puis sur le terminal du serveur il suffit de faire en sorte que le DHCP prenne en compte le changement de réseau:</strong></span>
+                <ul>
+                  <li><span class="text-big"><strong>pour ça il faut marquer dhclient -r</strong></span>
+                  </li>
+                  <li><span class="text-big"><strong>puis dhclient -v</strong></span>
+                  </li>
+                  <li><span class="text-big"><strong>pour vérifier si c'est bon, faire ip -c a | grep eth0</strong></span>
+                  </li>
+                  <li><span class="text-big"><strong>puis on utilise la nouvelle adresse et une application de sotfphone sur portable (comme Zoiper par exemple)</strong></span>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </body>
+
+</html>

@@ -1,0 +1,48 @@
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../../style.css">
+    <base target="_parent">
+    <title data-trilium-title>Profil itinérant</title>
+  </head>
+  
+  <body>
+    <div class="content">
+       <h1 data-trilium-h1>Profil itinérant </h1>
+
+      <div class="ck-content">
+        <p>Sert à sauvegarder le profil utilisateur sur un dossier partagé sur serveur
+          ( paramètrages / dossier ) exemple : charge le profil et les données à
+          la connexion et les synchronise (sauvegarde) à la déconnexion
+          <br>Avant de configurer un profil itinérant, nous devons créer un dossier
+          répertoire pour stocker les paramètres et leurs fichiers.</p>
+        <p>Partagé le fichier aux utilisateurs de l'AD et supprimer les perms pour
+          “Tout le monde”, remplacé par utilisateurs</p>
+        <p>Ajusté les droits NTFS (sécurité) pour ce groupe en contrôle total</p>
+        <p>Prendre le chemin UNC et le mettre sur l'utilisateur désiré : Clique droit
+          propriétés &gt; Profil &gt; Chemin du profil</p>
+        <figure class="image">
+          <img src="http://www.it-connect.fr/wp-content-itc/uploads/2014/10/profil10.png"
+          alt="profil10">
+        </figure>
+        <p>Nous pouvons ajouter un dossier de base de 5go avec le profil itinérant,
+          exemple :</p>
+        <figure class="image">
+          <img src="1_Profil itinérant_image.png">
+        </figure>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>Par GPO :</p>
+        <figure class="image">
+          <img src="Profil itinérant_image.png">
+        </figure>
+        <p>Puis configurer les paramètres voulu</p>
+        <p>&nbsp;</p>
+      </div>
+    </div>
+  </body>
+
+</html>

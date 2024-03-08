@@ -1,0 +1,63 @@
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../style.css">
+    <base target="_parent">
+    <title data-trilium-title>Radius</title>
+  </head>
+  
+  <body>
+    <div class="content">
+       <h1 data-trilium-h1>Radius</h1>
+
+      <div class="ck-content">
+        <h3 style="margin-left:0px;">RADIUS Remote Authentication Dial-In User Service est un protocole client/serveur</h3>
+        <p style="margin-left:0px;">&nbsp;</p>
+        <p style="margin-left:0px;">Le client RADIUS est généralement un NAS et le serveur RADIUS est généralement
+          un processus démon qui s'exécute sur une machine UNIX ou Windows NT. Le
+          client transmet les informations utilisateur aux serveurs RADIUS désignés
+          et agit sur la réponse renvoyée. Les serveurs RADIUS reçoivent des demandes
+          de connexion des utilisateurs, authentifient l’utilisateur, puis renvoient
+          les informations de configuration nécessaires pour que le client remette
+          le service à l’utilisateur. Un serveur RADIUS peut faire fonction de client
+          proxy pour d’autres serveurs RADIUS ou pour d’autres types de serveurs
+          d’authentification</p>
+        <figure class="image">
+          <img src="https://www.cisco.com/c/dam/en/us/support/docs/security-vpn/remote-authentication-dial-user-service-radius/12433-32-00.png"
+          alt="Interaction between Dial-in User and the RADIUS Client and Server">
+        </figure>
+        <p style="margin-left:0px;">L’utilisateur lance l’authentification PPP sur le NAS.</p>
+        <p style="margin-left:0px;">Le NAS demande le nom d’utilisateur et le mot de passe (si le protocole
+          PAP (Password Authentication Protocol) est adopté) ou lance le défi (si
+          le protocole CHAP d’authentification de négociation par défi [ou Challenge
+          Handshake Authentication Protocol] est adopté).</p>
+        <p style="margin-left:0px;">L’utilisateur répond.</p>
+        <p style="margin-left:0px;">Le client RADIUS envoie le nom d’utilisateur et le mot de passe chiffré
+          au serveur RADIUS.</p>
+        <p style="margin-left:0px;">Le serveur RADIUS répond avec une acceptation, un refus ou un défi.</p>
+        <p
+        style="margin-left:0px;">Le client RADIUS agit selon les services et les paramètres de services
+          regroupés avec l’acceptation ou le refus.</p>
+          <p style="margin-left:0px;">&nbsp;</p>
+          <p style="margin-left:0px;">protocole point-à-point (PPP) inclus :</p>
+          <p style="margin-left:0px;">PAP (Password Authentication Protocol) &nbsp;</p>
+          <p style="margin-left:0px;">ou</p>
+          <p style="margin-left:0px;">protocole d'authentification CHAP (Challenge Handshake Authentication
+            Protocol)</p>
+          <p style="margin-left:0px;">Le protocole CHAP est considéré comme étant plus sécurisé car le mot de
+            passe utilisateur n’est jamais envoyé sur la connexion.&nbsp;</p>
+          <p style="margin-left:0px;">&nbsp;</p>
+          <p style="margin-left:0px;">&nbsp;</p>
+          <p style="margin-left:0px;">&nbsp;</p>
+          <p style="margin-left:0px;">&nbsp;</p>
+          <figure class="image">
+            <img src="https://www.cisco.com/c/dam/en/us/support/docs/security-vpn/remote-authentication-dial-user-service-radius/12433-32-01.png"
+            alt="RADIUS Authentication and Authorization Sequence">
+          </figure>
+      </div>
+    </div>
+  </body>
+
+</html>

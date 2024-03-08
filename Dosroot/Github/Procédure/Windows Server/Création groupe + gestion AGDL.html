@@ -1,0 +1,110 @@
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../../style.css">
+    <base target="_parent">
+    <title data-trilium-title>Création groupe + gestion AGDLP</title>
+  </head>
+  
+  <body>
+    <div class="content">
+       <h1 data-trilium-h1>Création groupe + gestion AGDLP</h1>
+
+      <div class="ck-content">
+        <p><strong>Account Global Domain Local Permissions</strong>.</p>
+        <p>Nous commencer par créer nos OU pour avoir une gestion plus de simple
+          de nos groupes.</p>
+        <p>Après avoir créer notre OU Groupe, nous allons créer un groupe pour chaque
+          service</p>
+        <p>Nous allons créer un second groupe, cette fois-ci pour l'administration
+          de droit de ces groupes</p>
+        <p>pour créer le premier groupe aller dans l'OU groupes puis cliquer ici
+          :</p>
+        <figure class="image">
+          <img src="Création groupe + gestion AGDL">
+        </figure>
+        <p>Choisir le nom du groupe et son étendu, pour ce premier groupe, global.</p>
+        <figure
+        class="image">
+          <img src="1_Création groupe + gestion AGDL">
+          </figure>
+          <p>étant donner que son groupe est Globale, nous allons le nommer GG_ suivis
+            du nom du groupe.</p>
+          <p>Une fois nos GG créer, nous allons créer nos groupes de Domaine local.</p>
+          <figure
+          class="image">
+            <img src="2_Création groupe + gestion AGDL">
+            </figure>
+            <p>Cette fois-ci comme on sélectionne Domaine local, nous allons le nommer
+              GDL_NomG_RW ou _RO</p>
+            <p>RW pour les droits d'écriture/lecture, RO pour les droits de lecture.</p>
+            <p>Une fois cette action terminée, nous allons imbriquer nos utilistateur
+              dans nos GG. Pour celà, sélectionnez tous les utilistateur de l'OU concerné
+              puis ajouter à un groupe.&nbsp;</p>
+            <figure class="image">
+              <img src="4_Création groupe + gestion AGDL">
+            </figure>
+            <p>ici, GG_Dev étant donner que nos utilisateur ce trouve dans l'OU Développeur.</p>
+            <figure
+            class="image">
+              <img src="5_Création groupe + gestion AGDL">
+              </figure>
+              <p>Ensuite, nous allons intégrer nos GG dans les GDL, pour ceci, clique droit
+                sur le groupe voulu puis ajouter à un groupe. par exemple, ici, GG_Compta
+                dans GDL_Compta_RW puis refaire l'action pour GDL_Compta_RO.</p>
+              <figure
+              class="image">
+                <img src="3_Création groupe + gestion AGDL">
+                </figure>
+                <p>Ensuite, nous allons appliqué les droits NTFS des groupes concernés sur
+                  leur dossier dédié (en partant du principe que le mappage a déjà été fait
+                  sur le dossier de l'entreprise), pour celà : clique droit sur le dossier
+                  voulu (ici Dev), propriétés, puis sécurité.</p>
+                <figure class="image">
+                  <img src="6_Création groupe + gestion AGDL">
+                </figure>
+                <p>Aller dans Avancé et désactiver l'héritage</p>
+                <figure class="image">
+                  <img src="7_Création groupe + gestion AGDL">
+                </figure>
+                <figure class="image">
+                  <img src="8_Création groupe + gestion AGDL">
+                </figure>
+                <p>Convertir les autorisations (Pour garder les perm d'application dessus)</p>
+                <p>Ensuite, Appliquer puis OK.&nbsp;</p>
+                <p>Aller maintenant dans Modifier</p>
+                <figure class="image">
+                  <img src="9_Création groupe + gestion AGDL">
+                </figure>
+                <p>&nbsp;</p>
+                <p>Commencer par supprimer le groupe “Tout le monde” puis cliquer sur ajouter,
+                  mettre le groupe GDL du département concerné, ici nous sommes sur le dossier
+                  dev, donc GDL_Dev_RW pour qu'ils aient le droit d'écriture et lecture.</p>
+                <figure
+                class="image">
+                  <img src="10_Création groupe + gestion AGDL">
+                  </figure>
+                  <p>coché les autorisations en lien avec la GDL</p>
+                  <figure class="image">
+                    <img src="11_Création groupe + gestion AGDL">
+                  </figure>
+                  <p>Les utilisateurs de l'OU Dev (donc imbriqué dans GG_Dev, qui est lui même
+                    imbriqué dans GDL_Dev_RW) peuvent désormais avoir accès à ce dossier, créer
+                    leur propre fichier, y écrire, les lires et les exécuter.</p>
+                  <p>&nbsp;</p>
+                  <p>&nbsp;</p>
+                  <p>Note : Les permissions NTFS offre un plus grand choix qu'un partage simple,
+                    de plus les permissions de celui-ci s'appliquent uniquement lorsque l'on
+                    accède à distance à ce dossier/fichier, alors qu'avec les permissions NTFS
+                    s'appliquent aussi lorsque on accède en local.</p>
+                  <p>Bonus : En cas de cumul de droit ( NTFS + Partage ) les permissions effectives
+                    correspondront aux permissions les plus restrictives.</p>
+                  <p>&nbsp;</p>
+                  <p>&nbsp;</p>
+      </div>
+    </div>
+  </body>
+
+</html>

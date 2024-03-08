@@ -1,0 +1,55 @@
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../style.css">
+    <base target="_parent">
+    <title data-trilium-title>Centreon</title>
+  </head>
+  
+  <body>
+    <div class="content">
+       <h1 data-trilium-h1>Centreon</h1>
+
+      <div class="ck-content">
+        <p>Centreon est un outil de supervision et de monitoring</p>
+        <p>https://docs.centreon.com/fr/docs/getting-started/welcome/</p>
+        <p><span class="text-big" style="color:hsl(0, 75%, 60%);"><strong>Architecture simple</strong></span>:
+          Tous les modules de Centreon dans un unique serveur.</p>
+        <p style="margin-left:0px;">A noter toutefois que ce type d’architecture comporte de nombreux inconvénients&nbsp;:&nbsp;</p>
+        <ul>
+          <li>En cas de perte du serveur, on perd toute vues de supervision possibles
+            car tous les modules sont dans le même serveur.</li>
+          <li>Les agents envoyant les informations vers un point unique du réseau, la
+            bande passante risque de saturer très rapidement en fonction du nombre
+            d'hôtes supervisés dans l'infrastructure.</li>
+        </ul>
+        <p>Schéma d'une architecture simple :</p>
+        <figure class="image">
+          <img src="https://wiki-tech.io/images/centreon-2.png">
+        </figure>
+        <h2 style="margin-left:0px;"><span class="text-big" style="color:hsl(0, 75%, 60%);">Architecture distribuée</span></h2>
+        <p style="margin-left:0px;">Une architecture distribuée se compose en général d’un serveur de supervision
+          et d’un ou plusieurs « poller ».&nbsp;
+          <br>Elle permet notamment :&nbsp;</p>
+        <ul>
+          <li>De répartir la charge sur plusieurs serveurs de supervision</li>
+          <li>De limiter l’impact du flux de supervision sur les interconnexions de
+            réseaux</li>
+          <li>L’isolation de réseau.</li>
+          <li>Une relation de master-slave peut être mis en place sur la base de données
+            mais aussi sur le Central.
+            <br>Exemple d’un schéma d’une architecture dite distribuée :&nbsp;</li>
+          <li>
+            <img src="https://wiki-tech.io/images/centreon-3.png">
+          </li>
+        </ul>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+      </div>
+    </div>
+  </body>
+
+</html>

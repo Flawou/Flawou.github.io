@@ -1,0 +1,47 @@
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../../style.css">
+    <base target="_parent">
+    <title data-trilium-title>Connexion domain</title>
+  </head>
+  
+  <body>
+    <div class="content">
+       <h1 data-trilium-h1>Connexion domain</h1>
+
+      <div class="ck-content">
+        <p>&nbsp;</p>
+        <p>Pour se connecter au domaine via le client, entrer dans une session user
+          classique pour récuperer les informations réseaux via le DHCP&nbsp;</p>
+        <p>(vérifier que le DNS est équivalent à l'ip du serveur)</p>
+        <p>ensuite, clique droit sur “Ce PC” puis renommer le pc (avancé)&nbsp;</p>
+        <figure
+        class="image">
+          <img src="Connexion domain_image.png">
+          </figure>
+          <p>Puis cliquer sur modifier et finir par choisir le nom de domaine&nbsp;</p>
+          <figure
+          class="image">
+            <img src="1_Connexion domain_image.png">
+            </figure>
+            <p>ensuite, changer d'utilisateur en utilisent la stratégie de groupe ( accessible
+              en écrivant gpedit.msc dans w+r)</p>
+            <p>Puis sélectionner Paramètres windows dans configuration ordinateur, paramètres
+              de sécurité&nbsp;</p>
+            <figure class="image">
+              <img src="2_Connexion domain_image.png">
+            </figure>
+            <p>ensuite, ouvrir , stratégie locale, option de sécurité puis clique droit
+              sur Ouverture de session interactive : Ne pas afficher le nom du dernier
+              utilisateur connecté puis propriété, activer.</p>
+            <figure class="image">
+              <img src="3_Connexion domain_image.png">
+            </figure>
+      </div>
+    </div>
+  </body>
+
+</html>

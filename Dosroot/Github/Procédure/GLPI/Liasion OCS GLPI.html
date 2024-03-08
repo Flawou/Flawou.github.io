@@ -1,0 +1,41 @@
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../../style.css">
+    <base target="_parent">
+    <title data-trilium-title>Liasion OCS GLPI</title>
+  </head>
+  
+  <body>
+    <div class="content">
+       <h1 data-trilium-h1>Liasion OCS GLPI</h1>
+
+      <div class="ck-content">
+        <p>Commencer par activer les plugins sur glpi</p>
+        <figure class="image">
+          <img src="Liasion OCS GLPI_image.png">
+        </figure>
+        <p>ensuite installer git sur la machine :</p>
+        <p>Apt install git&nbsp;</p>
+        <p>ce mettre dans fichier glpi/plugins&nbsp;</p>
+        <p>exemple : /var/www/glpi/plugins ou /var/www/html/lpi/plugins</p>
+        <p>ensuite aller chercher le wget sur git hub</p>
+        <p>exemple : wget <a href="https://github.com/pluginsGLPI/ocsinventoryng/releases/download/2.0.4/glpi-ocsinventoryng-2.0.4.tar.bz2">https://github.com/pluginsGLPI/ocsinventoryng/releases/download/2.0.4/glpi-ocsinventoryng-2.0.4.tar.bz2</a>
+        </p>
+        <p>puis décompresser l'archive :</p>
+        <p>tar -xzf glpi tab</p>
+        <p>retourner sur glpi pour activer le nouveau plugin (refresh pour le voir
+          apparaître)</p>
+        <p>une fois le plugin actif, aller dans Outil &gt; OCS INVENTORY NG&nbsp;</p>
+        <p>Import de l'inventaire &gt; cliquer sur le + Importer ou lier des ordinateurs&nbsp;</p>
+        <p>config :&nbsp;</p>
+        <p>Puis activer le TRACER sur OCS&nbsp;</p>
+        <p>Configuration → Configuration Général → Serveur → On Trace_DELETED</p>
+        <p>&nbsp;</p>
+      </div>
+    </div>
+  </body>
+
+</html>

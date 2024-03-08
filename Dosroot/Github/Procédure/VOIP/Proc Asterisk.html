@@ -1,0 +1,57 @@
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../../style.css">
+    <base target="_parent">
+    <title data-trilium-title>Proc Asterisk</title>
+  </head>
+  
+  <body>
+    <div class="content">
+       <h1 data-trilium-h1>Proc Asterisk</h1>
+
+      <div class="ck-content">
+        <p>(Sur VM installer SSH pour plus de rapidité)</p>
+        <p>Apt update / apt upgrade pour vérifer système à jours</p>
+        <p>ensuite, aller dans le dossier cd /usr/src</p>
+        <p>choisir la version Asterisk voulu</p>
+        <p>wget <a href="https://downloads.asterisk.org/pub/telephony/asterisk/asterisk-16-current.tar.gz">https://downloads.asterisk.org/pub/telephony/asterisk/asterisk-18-current.tar.gz</a>
+        </p>
+        <p>extraire l'archive&nbsp;</p>
+        <p>tar xzvf asterisk-version-current.tar.gz</p>
+        <p>ensuite nous allons commencer l'installation</p>
+        <p>cd asterisk-version.version</p>
+        <p>contrib/scripts/install_prereq install</p>
+        <p>33 pour la france</p>
+        <p>une fois l'install terminé cette ligne devrait apparaître:</p>
+        <figure
+        class="image image-style-block-align-left">
+          <img src="Proc Asterisk_image.png">
+          </figure>
+          <p>ensuite, vérif+maj mp3</p>
+          <p>contrib/scripts/get_mp3_source.sh</p>
+          <p>puis ./configure --with-jansson-bundled&nbsp;</p>
+          <p>puis make menuselect</p>
+          <p>Une fois le menu ouvert :&nbsp;</p>
+          <p>sélectionner, dans ADD-ONS :</p>
+          <p>Format mp3</p>
+          <p>Dans core Sound et Music on Hold, extra sounds</p>
+          <p>FR Ulaw/Alaw</p>
+          <p>puis faire esc save &amp; exit</p>
+          <p>puis compiler en faisant make -j2</p>
+          <p>lancer l'install</p>
+          <p>make install</p>
+          <p>puis</p>
+          <figure class="image image-style-block-align-left">
+            <img src="1_Proc Asterisk_image.png">
+          </figure>
+          <p style="margin-left:40px;">&nbsp;</p>
+          <p style="margin-left:40px;">&nbsp;</p>
+          <p>&nbsp;</p>
+      </div>
+    </div>
+  </body>
+
+</html>

@@ -1,0 +1,41 @@
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../../../style.css">
+    <base target="_parent">
+    <title data-trilium-title>Messagerie Vocale</title>
+  </head>
+  
+  <body>
+    <div class="content">
+       <h1 data-trilium-h1>Messagerie Vocale</h1>
+
+      <div class="ck-content">
+        <p>Nous devons commencer par modifier le fichier extensions</p>
+        <p>nano /etc/asterisk/extensions.conf</p>
+        <p>exten =&gt; 098, 1, VoiceMailMain (${CALLERID(num)})&nbsp;</p>
+        <p>explication :</p>
+        <p>extensions → Numéro du téléphone , priorité 1, MessagerieVocal (identifiant
+          de la personne qui appel + son numéro)</p>
+        <p>Maintenant nous allons configuer le fichier de la boîte message :&nbsp;</p>
+        <p>cp /etc/asterisk/voicemail.conf /etc/asterisk/voicemail.conf.original</p>
+        <p>on vide le fichier de base&nbsp;</p>
+        <p>→ /etc/asterisk/voicemail.conf</p>
+        <p>puis éditer le fichier&nbsp;</p>
+        <p>nano /etc/asterisk/voicemail.conf</p>
+        <figure class="image">
+          <img src="Messagerie Vocale_image.png">
+        </figure>
+        <p>explication :</p>
+        <p>100 = numéro de téléphone utilisateur 123 = mot de passe de la mesagerieV,
+          puis adresse mail</p>
+        <p>Reload les paramètres dans la console Asterisk&nbsp;</p>
+        <p>asterisk -rvv&nbsp;; ouvrir la console</p>
+        <p>reload&nbsp;; recharger pour prendre en compte les changements</p>
+      </div>
+    </div>
+  </body>
+
+</html>

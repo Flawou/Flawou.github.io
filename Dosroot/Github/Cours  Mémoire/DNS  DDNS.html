@@ -1,0 +1,89 @@
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../style.css">
+    <base target="_parent">
+    <title data-trilium-title>DNS / DDNS</title>
+  </head>
+  
+  <body>
+    <div class="content">
+       <h1 data-trilium-h1>DNS / DDNS</h1>
+
+      <div class="ck-content">
+        <p><strong>Le DNS (Domain Name System/Service, système de nom de domaine) est en quelque sorte le répertoire téléphonique d'Internet</strong>
+        </p>
+        <p>&nbsp;</p>
+        <p><strong>Chaque appareil connecté à Internet dispose d'une adresse IP unique que les autres appareils utilisent afin de le trouver. Grâce aux serveurs DNS, les internautes n'ont pas à mémoriser les adresses IPv4/6</strong>
+        </p>
+        <p><strong>Chaque appareil relié à Internet se voit attribuer une de ces adresse. Cette dernière permet de trouver l'appareil approprié sur Internet, de la même manière qu'une adresse dans une rue permet de trouver un domicile.&nbsp;</strong>
+        </p>
+        <p><strong>Le processus de résolution DNS implique la conversion d'un nom d'hôte (par exemple, www.malphite.com) en adresse IP</strong>
+        </p>
+        <p>&nbsp;</p>
+        <h2><strong>Quatre serveurs DNS sont impliqués dans le chargement d'une page web</strong></h2>
+        <p>&nbsp;</p>
+        <ul>
+          <li><a href="https://www.cloudflare.com/learning/dns/dns-server-types/"><strong>Récurseur DNS</strong></a>&nbsp;: <strong>Il s'agit d'un serveur conçu pour recevoir les requêtes des ordinateurs par l'intermédiaire d'applications, telles que les navigateurs web. Nous voyons ici le chemin d'une requête type.</strong>  <strong>Après avoir reçu une requête DNS d'un client web, un résolveur récursif répondra avec des données mises en cache ou enverra une requête à un serveur de noms racine ( Root Server ).</strong>
+            <img
+            src="https://www.cloudflare.com/img/learning/dns/dns-server-types/recursive-resolver.png"
+            alt="Résolveur DNS récursif">
+          </li>
+          <li><strong>Serveur de noms racine : il constitue la première étape de la traduction des noms d'hôtes lisibles par l'humain en adresses IP.</strong>
+            <ul>
+              <li><strong>chaque fois qu'un utilisateur saisit une adresse web dans son navigateur, cela déclenche une résolution DNS, qui commence à la zone racine, elle suit ensuite la hiérarchie du système DNS.</strong>
+              </li>
+              <li><strong>Chaque fois qu'une résolution DNS est lancée, la première communication du récurseur se fait avec l'une de ces 13 adresses IP.</strong>
+              </li>
+              <li><strong>atteignant d'abord les serveurs TLD puis les serveurs de domaines spécifiques, jusqu'à atteindre le serveur de nom faisant autorité pour le bon domaine, qui contient l'adresse IP numérique du site en question.</strong>
+              </li>
+              <li><strong>En cas de panne</strong>,<strong> les résolveurs récursifs peuvent continuer à utiliser les 12&nbsp;autres adresses IP</strong>  <strong>de la zone racine pour effectuer des résolutions DNS jusqu'à ce que leur logiciel soit mis à jour avec les adresses correctes de tous les 13&nbsp;serveurs</strong>
+              </li>
+              <li><strong>Cette adresse ip est ensuite renvoyé à l'utilisateur, à noter que tout cela ce déroule très rapidement.</strong>
+                <ul>
+                  <li><strong>Qui les gères ? : Il existe actuellement plus de 600&nbsp;serveurs racine DNS différents répartis sur tous les continents habités de la planète. L'Internet Corporation for Assigned Names and Numbers (ICANN) gère des serveurs pour l'une des 13&nbsp;adresses IP de la zone racine et délègue la gestion des 12&nbsp;autres adr. IP à des organisations tels que la NASA/université Maryland/Verisign.</strong>
+                    <br>&nbsp;</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <figure class="image">
+          <img src="https://www.cloudflare.com/img/learning/dns/glossary/dns-root-server/dns-root-server.png"
+          alt="Héritage DNS">
+        </figure>
+        <ul>
+          <li><a href="https://www.cloudflare.com/learning/dns/dns-server-types/"><strong>Serveur de noms TLD</strong></a><strong>: (Top Level Domain) le serveur de domaine de premier niveau peut être considéré comme un rayonnage spécifique au sein d'une bibliothèque, ce serveur de noms héberge la dernière partie d'un nom d'hôte ( .com/.org etc)</strong>
+          </li>
+          <li><a href="https://www.cloudflare.com/learning/dns/dns-server-types/"><strong>Serveur de noms de référence</strong></a><strong>: Le serveur de noms de référence constitue la dernière étape d'une requête effectuée au serveur de noms. Si le serveur de noms de référence a accès à l'enregistrement demandé, il renvoie l'adresse IP du nom d'hôte demandé au récurseur DNS</strong>
+          </li>
+        </ul>
+        <p><span class="text-big"><strong>Quel port ?</strong></span>
+        </p>
+        <p><strong>Les requêtes DNS sont faites par le Port UDP53 pour les requêtes inférieures à 512 octets et TCP53 pour les supérieures. Le port est dedié mais vulnérable aux attaques Trojan ou worm.</strong>
+        </p>
+        <h2><strong>Quelle est la différence entre un serveur DNS de référence et un résolveur DNS récursif&nbsp;?</strong></h2>
+        <p>&nbsp;</p>
+        <ul>
+          <li><span class="text-big"><strong>Résolveur DNS récursif :</strong></span><strong> Le résolveur récursif désigne l'ordinateur qui répond à la requête récursive d'un client comme vu au préalable, cependant, le résolveur récursif permet de court-circuiter les requêtes nécessaires en fournissant l'enregistrement de la ressource demandée plus tôt au sein de la recherche DNS grâce à une mise en cache.</strong>
+            <img
+            src="https://cf-assets.www.cloudflare.com/slt3lc6tev37/3NOmAzkfPG8FTA8zLc7Li8/8efda230b212c0de2d3bbcb408507b1e/dns_record_request_sequence_recursive_resolver.png"
+            alt="Séquence de demande d'enregistrement DNS - Le résolveur récursif DNS reçoit une demande du client.">
+          </li>
+        </ul>
+        <p>&nbsp;</p>
+        <ul>
+          <li><span class="text-big"><strong>Serveur DNS de référence :</strong></span><strong>&nbsp;</strong>  <strong>En clair, le terme serveur DNS de référence désigne un serveur détenant réellement les enregistrements de ressources DNS et responsable de ces derniers. Ce serveur répond en renvoyant l'enregistrement de la ressource recherchée, il permet au navigateur web effectuant la requête (utilisateur) d'atteindre l'adresse ip nécessaire pour accèder à son site ou à d'autres ressources web.</strong>
+            <img
+            src="https://cf-assets.www.cloudflare.com/slt3lc6tev37/6Cxvsc4NOvmU4pPkKbkDmP/a7588a4c8a3c187e9175a40fa1b3d548/dns_record_request_sequence_authoritative_nameserver.png"
+            alt="Séquence de demande d'enregistrement DNS - La requête DNS atteint le serveur de noms faisant autorité pour cloudflare.com">
+          </li>
+        </ul>
+        <p>Parmis les DNS,&nbsp;</p>
+      </div>
+    </div>
+  </body>
+
+</html>

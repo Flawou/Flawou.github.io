@@ -1,0 +1,81 @@
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../style.css">
+    <base target="_parent">
+    <title data-trilium-title>TFTP</title>
+  </head>
+  
+  <body>
+    <div class="content">
+       <h1 data-trilium-h1>TFTP </h1>
+
+      <div class="ck-content">
+        <p style="margin-left:0px;"><strong>TFTP (Trivial File Transfer Protocol) :</strong>
+        </p>
+        <ul>
+          <li>TFTP est un protocole simple de transfert de fichiers utilisé pour transférer
+            des fichiers entre un client et un serveur.</li>
+          <li>Il fonctionne sur UDP (User Datagram Protocol) et ne nécessite pas d'authentification
+            utilisateur.</li>
+          <li>TFTP manque de nombreuses fonctionnalités de FTP et est principalement
+            utilisé pour le démarrage de postes de travail sans disque ou pour le transfert
+            de micrologiciels vers des périphériques réseau.</li>
+          <li>Il est léger et adapté aux tâches simples de transfert de fichiers.</li>
+        </ul>
+        <p style="margin-left:0px;"><strong>FTP (File Transfer Protocol) :</strong>
+        </p>
+        <ul>
+          <li>FTP est un protocole réseau standard utilisé pour transférer des fichiers
+            entre un client et un serveur sur un réseau informatique.</li>
+          <li>Il fonctionne sur TCP (Transmission Control Protocol) et prend en charge
+            l'authentification utilisateur.</li>
+          <li>FTP permet aux utilisateurs de parcourir les répertoires, de télécharger
+            des fichiers, de télécharger des fichiers, de renommer des fichiers et
+            de supprimer des fichiers sur un serveur distant.</li>
+          <li>Cependant, FTP manque de chiffrement, le rendant vulnérable aux menaces
+            de sécurité telles que l'écoute et la manipulation des données.</li>
+        </ul>
+        <p style="margin-left:0px;"><strong>FTPS (File Transfer Protocol Secure) :</strong>
+        </p>
+        <ul>
+          <li>FTPS est une extension de FTP qui ajoute la prise en charge du chiffrement
+            via SSL (Secure Sockets Layer) ou TLS (Transport Layer Security).</li>
+          <li>Il fournit un moyen plus sécurisé de transférer des fichiers sur FTP en
+            chiffrant à la fois les canaux de contrôle et de données.</li>
+          <li>FTPS peut fonctionner en mode implicite (où la négociation SSL/TLS démarre
+            immédiatement lors de la connexion) ou en mode explicite (où la négociation
+            SSL/TLS est initiée par le client).</li>
+          <li>FTPS est largement utilisé dans des scénarios où la sécurité des données
+            est une préoccupation, comme le transfert de fichiers sensibles sur Internet.</li>
+        </ul>
+        <p style="margin-left:0px;"><strong>SFTP (SSH File Transfer Protocol) :</strong>
+        </p>
+        <ul>
+          <li>SFTP est un protocole réseau qui fournit un accès sécurisé aux fichiers,
+            un transfert de fichiers et des fonctionnalités de gestion de fichiers
+            via des connexions SSH (Secure Shell).</li>
+          <li>Il fonctionne sur le protocole SSH et chiffre à la fois les informations
+            d'authentification et le transfert de données.</li>
+          <li>SFTP permet aux utilisateurs d'effectuer diverses opérations sur les fichiers
+            telles que la liste des répertoires, le téléchargement de fichiers, le
+            téléchargement de fichiers, le renommage de fichiers et la suppression
+            de fichiers sur un serveur distant.</li>
+          <li>Contrairement à FTP et FTPS, SFTP utilise une seule connexion pour les
+            commandes et le transfert de données, simplifiant la configuration du pare-feu
+            et améliorant la sécurité.</li>
+        </ul>
+        <p style="margin-left:0px;">En résumé, TFTP est un protocole léger adapté aux tâches simples de transfert
+          de fichiers, FTP est un protocole standard de transfert de fichiers avec
+          des fonctionnalités de sécurité limitées, FTPS ajoute le chiffrement à
+          FTP pour une sécurité accrue et SFTP fournit des capacités de transfert
+          de fichiers sécurisées via des connexions SSH. Chaque protocole a ses forces
+          et ses faiblesses, et le choix dépend des besoins spécifiques de la tâche
+          de transfert de fichiers, y compris la sécurité, la complexité et la compatibilité.</p>
+      </div>
+    </div>
+  </body>
+
+</html>

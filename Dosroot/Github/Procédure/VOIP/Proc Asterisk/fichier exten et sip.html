@@ -1,0 +1,44 @@
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../../../style.css">
+    <base target="_parent">
+    <title data-trilium-title>fichier exten et sip</title>
+  </head>
+  
+  <body>
+    <div class="content">
+       <h1 data-trilium-h1>fichier exten et sip</h1>
+
+      <div class="ck-content">
+        <p>Copier le fichier de configuration pour ne pas le perdre et pouvoir le
+          remettre en cas de soucis</p>
+        <p>cp /etc/asterisk/sip.conf /etc/asterisk/sip.conf.original</p>
+        <p>ensuite vider le fichier de base&nbsp;</p>
+        <p>.&gt; /etc/asterisk/sip.conf</p>
+        <p>modifier le fichier&nbsp;</p>
+        <p>nano /etc/asterisk/sip.conf</p>
+        <figure class="image image-style-block-align-left">
+          <img src="fichier exten et sip_image.png">
+        </figure>
+        <p>exemple configuration</p>
+        <p>ensuite modifier le fichier contenant les extensions, le sauvegarder avant
+          modif.</p>
+        <p>cp /etc/asterisk/extensions.conf /etc/asterisk/extensions.conf.original</p>
+        <p>puis &gt; /etc/asterisk/extensions.conf&nbsp;</p>
+        <p>le modifier&nbsp;</p>
+        <p>nano /etc/asterisk/extensions.conf</p>
+        <figure class="image">
+          <img src="1_fichier exten et sip_image.png">
+        </figure>
+        <p>puis vérifier que les utilistaeur soit bien présent&nbsp;</p>
+        <p>asterisk -rvv</p>
+        <p>reload&nbsp;</p>
+        <p>sip show users</p>
+      </div>
+    </div>
+  </body>
+
+</html>

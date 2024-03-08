@@ -1,0 +1,87 @@
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../style.css">
+    <base target="_parent">
+    <title data-trilium-title>Zabbix</title>
+  </head>
+  
+  <body>
+    <div class="content">
+       <h1 data-trilium-h1>Zabbix</h1>
+
+      <div class="ck-content">
+        <p>Pour installer zabbix commencer par ajouter le dépot :</p>
+        <p style="margin-left:40px;">wget https://repo.zabbix.com/zabbix/6.4/debian/pool/main/z/zabbix-release/zabbix-release_6.4-1+debian12_all.deb
+          <br>dpkg -i zabbix-release_6.4-1+debian12_all.deb
+          <br>apt update</p>
+        <p>ensuite install des composants :</p>
+        <p style="margin-left:40px;">apt install zabbix-server-mysql zabbix-frontend-php zabbix-apache-conf
+          zabbix-sql-scripts zabbix-agent</p>
+        <p>modifier le fuseau horaire : (ctrql + q &gt; timezone)</p>
+        <p style="margin-left:40px;">nano /etc/php/8.2/apache2/php.ini</p>
+        <p style="margin-left:40px;">date.timezone = Europe/Paris</p>
+        <p>Puis installer MariaDB</p>
+        <p style="margin-left:40px;">apt-get install mariadb-server -y</p>
+        <p>Nettoyage de la base MariaDB :</p>
+        <p style="margin-left:40px;">mariadb-secure-installation&nbsp;
+          <br>vide / change mdp / y / y / y&nbsp;</p>
+        <p>Puis créer notre base de donnée :</p>
+        <p style="margin-left:40px;">mysql -u root -p&nbsp;</p>
+        <p style="margin-left:40px;">pw</p>
+        <p style="margin-left:40px;">create database zabbix character set utf8mb4 collate utf8mb4_bin;</p>
+        <p
+        style="margin-left:40px;">create user zabbix@localhost identified by 'user';&nbsp;</p>
+          <p style="margin-left:40px;">grant all privileges on zabbix.* to zabbix@localhost;</p>
+          <p style="margin-left:40px;">set global log_bin_trust_function_creators = 1;</p>
+          <p style="margin-left:40px;">flush privileges;</p>
+          <p style="margin-left:40px;">quit</p>
+          <p>Maintenant nous allons modifier le fichier de conf pour y ajouter le DBPassword&nbsp;</p>
+          <p
+          style="margin-left:40px;">nano /etc/zabbix/zabbix_server.conf&nbsp;
+            <br>ctrl + q &gt; DBPassword=</p>
+            <p style="margin-left:40px;">DBPassword=user</p>
+            <p>Puis&nbsp;</p>
+            <p style="margin-left:40px;">zcat /usr/share/zabbix-sql-scripts/mysql/server.sql.gz | mysql -u zabbix
+              -p zabbix</p>
+            <p style="margin-left:40px;">mettre mdp</p>
+            <p style="margin-left:40px;">(attendre un peu, ça prends du temps ( console revient à la norme après
+              l'action)</p>
+            <p>puis&nbsp;</p>
+            <p style="margin-left:40px;">mysql -u root -p</p>
+            <p style="margin-left:40px;">root</p>
+            <p style="margin-left:40px;">set global log_bin_trust_function_creators = 0;</p>
+            <p style="margin-left:40px;">quit;</p>
+            <p>redémarrer les services&nbsp;</p>
+            <p style="margin-left:40px;">systemctl restart zabbix-server zabbix-agent apache2</p>
+            <p>rendre le démarrage automatique</p>
+            <p style="margin-left:40px;"><u>systemctl enable zabbix-server zabbix-agent apache2</u>
+            </p>
+            <p>vérifications&nbsp;</p>
+            <p style="margin-left:40px;">systemctl status zabbix-server</p>
+            <p>&nbsp;</p>
+            <p>Si tout est en régle, ce connecter via une page web&nbsp;</p>
+            <p style="margin-left:40px;">ipsrv/zabbix</p>
+            <p style="margin-left:40px;">configurer zabbix :</p>
+            <figure class="image">
+              <img src="https://itech.nezrond.fr/wp-content/uploads/2023/07/Zabbix_LNG-1024x590.png">
+            </figure>
+            <p>Puis prochaine étape deux fois,</p>
+            <figure class="image">
+              <img src="Zabbix_image.png">
+            </figure>
+            <p>renseigner le pw du compte puis prochaine étape deux fois</p>
+            <p>puis terminé&nbsp;</p>
+            <p>
+              <br>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+      </div>
+    </div>
+  </body>
+
+</html>

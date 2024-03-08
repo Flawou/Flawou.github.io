@@ -1,0 +1,112 @@
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../../../style.css">
+    <base target="_parent">
+    <title data-trilium-title>proc ajout utilisateur</title>
+  </head>
+  
+  <body>
+    <div class="content">
+       <h1 data-trilium-h1>proc ajout utilisateur</h1>
+
+      <div class="ck-content">
+        <div>
+          <div>
+            <ul>
+              <li><span class="text-big"><strong>sur le panel Xivo, je vais dans Services --→ IPBX</strong></span>
+
+              </li>
+            </ul>
+            <figure class="image">
+              <img src="proc%20ajout%20utilisateur/image.png" />
+            </figure>
+            <ul>
+              <li><span class="text-big"><strong>dans “Paramètres IPBX” --→ Utilisateurs :</strong></span>
+
+                <ul>
+                  <li><span class="text-big"><strong>Cliquer sur l'icone “+” puis sur Ajouter</strong></span>
+
+                  </li>
+                </ul>
+              </li>
+            </ul>
+            <figure class="image">
+              <img src="proc%20ajout%20utilisateur/1_image.png" />
+            </figure>
+            <ul>
+              <li><span class="text-big"><strong>remplir les cases encadrées dans l'image en dessous (Mettre la langue en fr_FR et le fuseau horaire en Europe/Paris) :</strong></span>
+
+              </li>
+            </ul>
+            <figure class="image">
+              <img src="proc%20ajout%20utilisateur/XIVO.png" />
+            </figure>
+            <ul>
+              <li><span class="text-big"><strong>Ensuite, aller dans l'onglet Lignes et cliquer sur l'icone “+” verte :</strong></span>
+
+              </li>
+            </ul>
+            <figure class="image">
+              <img src="proc%20ajout%20utilisateur/2_image.png" />
+            </figure>
+            <ul>
+              <li><span class="text-big"><strong>Remplir les cases de la nouvelle ligne comme tel (pour le numéro ce sera celui qu'on utilisera pour appeler cet utilisateur, donc 101), puis sauvegarder</strong></span>
+
+              </li>
+            </ul>
+            <figure class="image">
+              <img src="proc%20ajout%20utilisateur/3_image.png" />
+            </figure>
+            <ul>
+              <li><span class="text-big"><strong>Et voila l'utilisateur est créé, si je souhaite modifier les identifiants et mdp de la ligne (ce qui nous permettra de nous connecter aux softphones comme 3CX et Zoiper), je doit copier le fichier IPBX.ini a partir de ma VM serveur dans un répertoire temporaire:</strong></span>
+
+                <ul>
+                  <li><span class="text-big" style="color:hsl(180, 75%, 60%)"><strong>docker cp xivo_webi_1:/etc/xivo/web-interface/ipbx.ini /tmp</strong></span>
+
+                  </li>
+                </ul>
+              </li>
+              <li><span class="text-big"><strong>ensuite utiliser la commande nano </strong></span>
+
+                <span
+                class="text-big" style="color:hsl(180, 75%, 60%)"><strong>/tmp/ipbx.ini</strong>
+
+                  </span><span class="text-big"><strong> et modifier dans la catégorie </strong></span>
+
+                  <span
+                  class="text-big" style="color:hsl(120, 75%, 60%)"><strong>[user] readonly-idpwd</strong>
+
+                    </span><span class="text-big"><strong> en </strong></span><span class="text-big"
+                    style="color:hsl(180, 75%, 60%)"><strong>false</strong></span><span class="text-big"><strong> puis sauvegarder</strong></span>
+
+                    <ul>
+                      <li><span class="text-big"><strong>Enfin, remettre le fichier modifié avec la commande </strong></span>
+
+                        <span
+                        class="text-big" style="color:hsl(180, 75%, 60%)"><strong>docker cp /tmp/ipbx.ini xivo_webi_1:/etc/xivo/web-interface/ipbx.ini</strong>
+
+                          </span>
+                      </li>
+                    </ul>
+              </li>
+              <li><span class="text-big"><strong>redémarrer Asterisk puis recharger la page, enfin aller voir dans les paramètres des lignes si c'est fonctionnel.</strong></span>
+
+              </li>
+              <li><span class="text-big"><strong>Autre chose importante: si on veut que l'utilisateur utilise des numéros spécifiques, il faut choisir le contexte contenant ces numéros dans lignes (si il est grisé, déliez la ligne de l'utilisateur concerné dans Utilisateurs en enlevant le numéro dans l'onglet lignes)</strong></span>
+
+              </li>
+            </ul>
+            <figure class="image">
+              <img src="proc%20ajout%20utilisateur/4_image.png" />
+            </figure>
+            <p> </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+
+</html>

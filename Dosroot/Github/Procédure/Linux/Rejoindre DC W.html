@@ -1,0 +1,52 @@
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../../style.css">
+    <base target="_parent">
+    <title data-trilium-title>Rejoindre DC W</title>
+  </head>
+  
+  <body>
+    <div class="content">
+       <h1 data-trilium-h1>Rejoindre DC W</h1>
+
+      <div class="ck-content">
+        <p>vérification adressage ip (même réseau que DC) ip -c a ou vérif via interface
+          graphique puis apt upgrade</p>
+        <p>apt install realmd</p>
+        <p>realm discover tssr.local</p>
+        <p>si fonctionne pas &gt; nano /etc/resolv.conf</p>
+        <p>mettre adresse serveur</p>
+        <p>installer package affiché par la commande :</p>
+        <p style="margin-left:calc(-1*var(--custom-message-margin-left-content-cozy));">apt -y install realmd libnss-sss libpam-sss sssd sssd-tools adcli samba-common-bin
+          oddjob oddjob-mkhomedir packagekit</p>
+        <p>ensuite joindre DC avec la commande &nbsp;:</p>
+        <p>realm join ‐U administrateur tssr.local</p>
+        <p>realm list pour vérifier la configuration&nbsp;</p>
+        <p>&nbsp;</p>
+        <figure class="image image-style-block-align-left">
+          <img src="Rejoindre DC W_image.png">
+        </figure>
+        <p>Si vous voulez rename machine : nano /etc/hostname</p>
+        <p>config sans interface graphique :</p>
+        <p>nano /etc/network/interfaces</p>
+        <p>#the primary netwok interface (ens33 ou ethx)</p>
+        <p>auto ens33</p>
+        <p>allow-hotplug ens33</p>
+        <p>iface ens33 inet static</p>
+        <p style="margin-left:40px;">address 192.168.244.80</p>
+        <p style="margin-left:40px;">netmask 255.255.255.0</p>
+        <p style="margin-left:40px;">gateway 192.168.244.2</p>
+        <p style="margin-left:40px;">dns-nameservers 192.168.244.5 #(DC)</p>
+        <p>nano /etc/resolv.conf</p>
+        <p>domain name tssr.local</p>
+        <p>search domain</p>
+        <p>mettre adresse serveur</p>
+        <p>&nbsp;</p>
+      </div>
+    </div>
+  </body>
+
+</html>

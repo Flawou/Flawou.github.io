@@ -1,0 +1,183 @@
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../../style.css">
+    <base target="_parent">
+    <title data-trilium-title>Commandes Linux (Bash/Terminal) pour les logs d&#39;évenements</title>
+  </head>
+  
+  <body>
+    <div class="content">
+       <h1 data-trilium-h1>Commandes Linux (Bash/Terminal) pour les logs d&#39;évenements</h1>
+
+      <div class="ck-content">
+        <div>
+          <div>
+            <p><span class="text-huge" style="color:hsl(0,75%,60%)"><i><strong>RSYSLOG:</strong></i></span>
+
+            </p>
+            <ul>
+              <li><span class="text-big" style="color:hsl(30,75%,60%)"><strong>Commandes:</strong></span>
+
+                <ul>
+                  <li><span style="color:hsl(180,75%,60%)"><strong>cat</strong></span><strong>: voir le contenu d'un fichier</strong>
+
+                    <ul>
+                      <li><span style="color:hsl(180,75%,60%)"><strong>zcat</strong></span><strong>: Variante de </strong>
+
+                        <span
+                        style="color:hsl(180,75%,60%)"><strong>cat</strong>
+
+                          </span><strong> pour les fichiers compressés (format gz)</strong>
+
+                      </li>
+                    </ul>
+                  </li>
+                  <li><span style="color:hsl(180,75%,60%)"><strong>more</strong></span><strong>: voir le contenu d'un fichier page par page</strong>
+
+                    <ul>
+                      <li><span style="color:hsl(180,75%,60%)"><strong>zmore</strong></span><strong>: Variante de </strong>
+
+                        <span
+                        style="color:hsl(180,75%,60%)"><strong>more</strong>
+
+                          </span><strong> pour les fichiers compressés</strong>
+
+                      </li>
+                    </ul>
+                  </li>
+                  <li><span style="color:hsl(180,75%,60%)"><strong>head</strong></span><strong>: voir les premières lignes d'un fichier</strong>
+
+                    <ul>
+                      <li><strong>on peut indiquer avec “</strong><span style="color:hsl(180,75%,60%)"><strong>-</strong></span><strong>” le nombre de lignes qu'on veut voir</strong>
+
+                      </li>
+                    </ul>
+                  </li>
+                  <li><span style="color:hsl(180,75%,60%)"><strong>tail</strong></span><strong>: voir les dernières lignes d'un fichier</strong>
+
+                    <ul>
+                      <li><strong>on peut indiquer avec “</strong><span style="color:hsl(180,75%,60%)"><strong>-</strong></span><strong>” un nombre de lignes qu'on veut voir</strong>
+
+                      </li>
+                    </ul>
+                  </li>
+                  <li><span style="color:hsl(180,75%,60%)"><strong>grep</strong></span><strong>: trouver quelquechose dans un fichier</strong>
+
+                    <ul>
+                      <li><span style="color:hsl(180,75%,60%)"><strong>zgrep</strong></span><strong>: Variante de </strong>
+
+                        <span
+                        style="color:hsl(180,75%,60%)"><strong>grep</strong>
+
+                          </span><strong> pour les fichiers compressés</strong>
+
+                      </li>
+                    </ul>
+                  </li>
+                  <li><strong>On peut utiliser “</strong><span style="color:hsl(180,75%,60%)"><strong>|</strong></span><strong>” pour faire deux commandes ensemble</strong>
+
+                  </li>
+                </ul>
+              </li>
+            </ul>
+            <p> </p>
+            <ul>
+              <li><span class="text-big" style="color:hsl(30,75%,60%)"><strong>Répertoire des logs:</strong></span>
+
+                <ul>
+                  <li><span style="color:hsl(60,75%,60%)"><strong>/var/log/</strong></span><strong>:</strong>
+
+                    <ul>
+                      <li><span style="color:hsl(60,75%,60%)"><strong>/boot.log</strong></span><strong> : Logs de démarrage du système</strong>
+
+                      </li>
+                      <li><span style="color:hsl(60,75%,60%)"><strong>/messages</strong></span><strong> : messages d'info</strong>
+
+                      </li>
+                      <li><span style="color:hsl(60,75%,60%)"><strong>/syslog</strong></span><strong> : tous les messages</strong>
+
+                      </li>
+                      <li><span style="color:hsl(60,75%,60%)"><strong>/auth.log</strong></span><strong> : logs d'authentification (reussies et échoués)</strong>
+
+                      </li>
+                      <li><span style="color:hsl(60,75%,60%)"><strong>/debug</strong></span><strong> : logs de débogage (pour le dépannage)</strong>
+
+                      </li>
+                      <li><span style="color:hsl(60,75%,60%)"><strong>/daemon.log</strong></span><strong> : log des démons (services)</strong>
+
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+            <p> </p>
+            <p><span class="text-huge" style="color:hsl(0,75%,60%)"><i><strong>THE JOURNAL:</strong></i></span>
+
+            </p>
+            <p> </p>
+            <ul>
+              <li><span class="text-big" style="color:hsl(30,75%,60%)"><strong>Commandes:</strong></span>
+
+                <span
+                style="color:hsl(30,75%,60%)"><strong> </strong>
+
+                  </span>
+                  <ul>
+                    <li><span style="color:hsl(180,75%,60%)"><strong>journalctl</strong></span><strong> : Voir toutes les logs:</strong>
+
+                      <ul>
+                        <li><span style="color:hsl(180,75%,60%)"><strong>-p err</strong></span><strong> : permet de ne voir que les erreurs</strong>
+
+                        </li>
+                        <li><span style="color:hsl(180,75%,60%)"><strong>-k</strong></span><strong> : ne voir que ce qui vient du noyau</strong>
+
+                        </li>
+                        <li><span style="color:hsl(180,75%,60%)"><strong>-n “NOMBRE”</strong></span><strong> : limiter le nombre de lignes a </strong>
+
+                          <span
+                          style="color:hsl(180,75%,60%)"><strong>“NOMBRE”</strong>
+
+                            </span><strong> lignes</strong>
+
+                        </li>
+                        <li><span style="color:hsl(180, 75%, 60%)"><strong>-u “NOM DU SERVICE”</strong></span><strong> : voir que les logs d'un service</strong>
+
+                        </li>
+                        <li><span style="color:hsl(180,75%,60%)"><strong>-f</strong></span><strong> : voir les modifications en direct</strong>
+
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+              </li>
+            </ul>
+            <p> </p>
+            <ul>
+              <li><span class="text-big" style="color:hsl(30,75%,60%)"><strong>Rendre the Journal persistant (il ne l'est pas de base) :</strong></span>
+
+                <ul>
+                  <li><strong>marquer </strong><span style="color:hsl(180,75%,60%)"><strong>mkdir -p /var/log/journal/</strong></span>
+
+                  </li>
+                  <li><strong>relancer journald:</strong>
+
+                    <ul>
+                      <li><span style="color:hsl(180,75%,60%)"><strong>systemctl restart systemd-journald</strong></span>
+
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+
+</html>

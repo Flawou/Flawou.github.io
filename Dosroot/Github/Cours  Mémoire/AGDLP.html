@@ -1,0 +1,90 @@
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../style.css">
+    <base target="_parent">
+    <title data-trilium-title>AGDLP</title>
+  </head>
+  
+  <body>
+    <div class="content">
+       <h1 data-trilium-h1>AGDLP</h1>
+
+      <div class="ck-content">
+        <p style="margin-left:0px;"><strong>Account</strong>: Il s'agit de l'utilisateur ou de l'entité à
+          laquelle des autorisations sont accordées. Cela peut être un utilisateur,
+          un groupe d'utilisateurs ou un service.</p>
+        <p style="margin-left:0px;"><strong>Global</strong>: Cela signifie que les autorisations sont définies
+          au niveau global, ce qui peut affecter l'ensemble du système, de l'organisation
+          ou d'une ressource.</p>
+        <p style="margin-left:0px;"><strong>Domain</strong>: Ce niveau spécifie des autorisations au niveau
+          d'un domaine ou d'une unité d'organisation au sein d'une infrastructure
+          informatique. Cela permet une gestion plus fine des autorisations.</p>
+        <p
+        style="margin-left:0px;"><strong>Local</strong>: Les autorisations locales sont définies au niveau
+          d'une ressource spécifique, telles qu'un fichier, un dossier ou un objet.
+          Ces autorisations sont souvent les plus spécifiques et les plus restrictives.</p>
+          <p
+          style="margin-left:0px;"><strong>Permissions</strong>: Cela fait référence aux autorisations spécifiques
+            attribuées à un compte, un groupe, un domaine ou une ressource. Les autorisations
+            définissent ce que l'utilisateur est autorisé à faire, comme la lecture,
+            l'écriture, la suppression, etc.</p>
+            <p style="margin-left:0px;">&nbsp;</p>
+            <p style="margin-left:0px;"><strong>Universal</strong>: Les autorisations universelles, qui sont généralement
+              attribuées au niveau de la forêt Active Directory. Les autorisations universelles
+              sont utiles dans les environnements complexes comportant plusieurs domaines
+              au sein d'une même forêt.</p>
+            <p style="margin-left:0px;">&nbsp;</p>
+            <p style="margin-left:0px;">Groupe ?</p>
+            <p style="margin-left:0px;">Création groupe global, création groupe local, insertion personne concernée
+              dans le groupe global puis insertion du groupe global dans le groupe domain
+              local</p>
+            <figure class="image image-style-block-align-left">
+              <img src="https://www.it-connect.fr/wp-content-itc/uploads/2023/01/Methode-AGDLP-Exemple.png"
+              alt="Méthode AGDLP - Exemple">
+            </figure>
+            <figure class="image image-style-block-align-left">
+              <img src="AGDLP_image.png">
+            </figure>
+            <p style="margin-left:0px;">
+              <img src="https://www.it-connect.fr/wp-content-itc/uploads/2023/01/Methode-AGDLP-Exemple-AD.png"
+              alt="Méthode AGDLP - Exemple AD">
+            </p>
+            <p style="margin-left:0px;">Sécurité ?</p>
+            <p style="margin-left:0px;">Vous vous demandez sûrement <strong>pourquoi on utilise deux types de groupes différents, avec des étendues différentes, et bien c'est pour des raisons de sécurité.</strong> En
+              cas d'infection d'un serveur, on limite les risques de propagation, car
+              on attribue des droits uniquement aux groupes de sécurité avec l'étendue
+              "domaine local", dont la portée se limite au domaine local. De ce fait,
+              la méthode AGDLP est encore plus pertinente sur les environnements avec
+              plusieurs domaines.</p>
+            <p style="margin-left:0px;">&nbsp;</p>
+            <p style="margin-left:0px;">Universelle ?</p>
+            <p style="margin-left:0px;">Les autorisations universelles, sont généralement attribuées au niveau
+              de la forêt Active Directory. Les autorisations universelles sont utiles
+              dans les environnements complexes comportant plusieurs domaines au sein
+              d'une même forêt.</p>
+            <p style="margin-left:0px;">&nbsp;</p>
+            <p style="margin-left:0px;">Domaine local ?&nbsp;</p>
+            <p style="margin-left:0px;">Le groupe domaine local doit avoir les droits uniquement sur son domaine
+              d'appartenance, on y ajuste les permissions NTFS sur le répertoire, on
+              y ajoute les groupes global.</p>
+            <p style="margin-left:0px;">Global ?</p>
+            <p style="margin-left:0px;">Le groupe global est utilisé pour placer les utilisateurs d'un même département
+              (ou qui vont devoir partager les mêmes droits)</p>
+            <p style="margin-left:0px;">&nbsp;</p>
+            <p style="margin-left:0px;">Distribution ?</p>
+            <p style="margin-left:0px;">Un groupe de distribution est <strong>une liste de destinataires de courriel qui doivent être créés dans l'outil Répertoire de la compagnie ou du projet de Procore</strong>.
+              Il est similaire en fonction à un groupe de contacts dans un programme
+              de messagerie et n'est associé à aucun paramètre de sécurité</p>
+            <p style="margin-left:0px;">&nbsp;</p>
+            <figure class="image">
+              <img src="1_AGDLP_image.png">
+            </figure>
+            <p>&nbsp;</p>
+      </div>
+    </div>
+  </body>
+
+</html>

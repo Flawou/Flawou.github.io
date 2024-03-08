@@ -1,0 +1,127 @@
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../../../style.css">
+    <base target="_parent">
+    <title data-trilium-title>proc ajout messagerie vocale</title>
+  </head>
+  
+  <body>
+    <div class="content">
+       <h1 data-trilium-h1>proc ajout messagerie vocale</h1>
+
+      <div class="ck-content">
+        <div>
+          <div>
+            <ul>
+              <li><span class="text-big"><strong>dans Services --→ IPBX --→ Paramètres IPBX --→ Messageries vocales:</strong></span>
+
+                <ul>
+                  <li><span class="text-big"><strong>cliquer sur l'icone “+” et remplir les cases encadrés:</strong></span>
+
+                    <ul>
+                      <li><span class="text-big"><strong>Nom complet: celui de votre utilisateur</strong></span>
+
+                      </li>
+                      <li><span class="text-big"><strong>Numéro de boite vocale: ce qui servira a joindre votre boite vocale (via *99"Numéro de boite vocale) ou</strong><i><strong> *</strong></i><strong>98 si vous appelez votre propre boite.)</strong></span>
+
+                      </li>
+                      <li><span class="text-big"><strong>Langue: fr_FR</strong></span>
+
+                      </li>
+                      <li><span class="text-big"><strong>Joindre le fichier audio: mettre non sauf si vous avez un fichier audio a disposition</strong></span>
+
+                      </li>
+                      <li><span class="text-big"><strong>décocher “Demander le mot de passe”</strong></span>
+
+                      </li>
+                      <li><span class="text-big"><strong>Sauvegarder !!!!</strong></span>
+
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+            <figure class="image">
+              <img src="proc%20ajout%20messagerie%20vocale/image.png" />
+            </figure>
+            <figure class="image">
+              <img src="proc%20ajout%20messagerie%20vocale/Xivo%202.png" />
+            </figure>
+            <figure class="image">
+              <img src="proc%20ajout%20messagerie%20vocale/1_image.png" />
+            </figure>
+            <ul>
+              <li><span class="text-big"><strong>maintenant que la boite vocale est crée, il va falloir la lier a l'utilisateur,</strong></span>
+
+              </li>
+              <li><span class="text-big"><strong>Pour ça, aller dans Paramètres IPBX --→ Utilisateurs:</strong></span>
+
+              </li>
+              <li><span class="text-big"><strong>Cliquer sur le crayon a coté des informations de l'utilisateur a qui on veut lier la boite vocale (ici ça sera Silver Lockser)</strong></span>
+
+              </li>
+            </ul>
+            <figure class="image">
+              <img src="proc%20ajout%20messagerie%20vocale/2_image.png" />
+            </figure>
+            <ul>
+              <li><span class="text-big"><strong>Aller dans la catégorie Messagerie Vocale,</strong></span>
+
+              </li>
+              <li><span class="text-big"><strong>Dans la case rechercher une messagerie, entrer le nom de votre messagerie (ou son numéro si le nom ne marche pas)</strong></span>
+
+              </li>
+            </ul>
+            <figure class="image">
+              <img src="proc%20ajout%20messagerie%20vocale/3_image.png" />
+            </figure>
+            <ul>
+              <li><span class="text-big"><strong>Sélectionner la messagerie concerné (ici c'est notre Silver Lockser - 501 [default]) et des nouvelles informations s'afficheront,</strong></span>
+
+              </li>
+              <li><span class="text-big"><strong>S'assurer que “Activer la messagerie vocale” est cochée puis vérifier les informations avant de sauvegarder</strong></span>
+
+              </li>
+            </ul>
+            <figure class="image">
+              <img src="proc%20ajout%20messagerie%20vocale/4_image.png" />
+            </figure>
+            <ul>
+              <li><span class="text-big"><strong>maintenant il faut s'assurer que on sera redirigé sur la boite vocale si il n'y a pas de réponse ou si ce numéro est occupé,</strong></span>
+
+              </li>
+              <li><span class="text-big"><strong>pour ça, on retourne dans les paramètres de notre utilisateur puis on va dans l'onglet Non réponse</strong></span>
+
+                <ul>
+                  <li><span class="text-big"><strong>Pour “Aucune réponse” sélectionner “messagerie vocale” et sélectionner notre boite vocale</strong></span>
+
+                  </li>
+                  <li><span class="text-big"><strong>Faire pareil pour Occupé et cocher “jouer le message d'occupation”</strong></span>
+
+                  </li>
+                  <li><span class="text-big"><strong>sauvegarder !!</strong></span>
+
+                  </li>
+                </ul>
+              </li>
+            </ul>
+            <figure class="image">
+              <img src="proc%20ajout%20messagerie%20vocale/5_image.png" />
+            </figure>
+            <ul>
+              <li><span class="text-big"><strong>NE PAS OUBLIER DE MODIFIER LE PARAMETRE “DTMF” EN RFC 2833 dans la ligne concerné (ici c'est la ligne de Silver Lockser)</strong></span>
+
+              </li>
+            </ul>
+            <p> </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+
+</html>

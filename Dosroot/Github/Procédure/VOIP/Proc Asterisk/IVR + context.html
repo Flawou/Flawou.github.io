@@ -1,0 +1,55 @@
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../../../style.css">
+    <base target="_parent">
+    <title data-trilium-title>IVR + context</title>
+  </head>
+  
+  <body>
+    <div class="content">
+       <h1 data-trilium-h1>IVR + context</h1>
+
+      <div class="ck-content">
+        <p>Installation des pré requis</p>
+        <p>apt install perl</p>
+        <p>apt install libwww-perl</p>
+        <p>apt install sox</p>
+        <p>apt install mpg123</p>
+        <p>apt install flac</p>
+        <p>Ensuite télécharger google.agi</p>
+        <p>cd /var/lib/asterisk/agi-bin</p>
+        <p>wget https://raw.github.com/zaf/asterisk-googletts/master/googletts.agi</p>
+        <p>chmod +x googletts.agi</p>
+        <p>vérifier que les modules son bien installé :</p>
+        <p>asterisk -rvv&nbsp;</p>
+        <p>module show</p>
+        <figure class="image image-style-block-align-left">
+          <img src="IVR + context_image.png">
+        </figure>
+        <p>Puis on modifier le fichier sip</p>
+        <figure class="image">
+          <img src="1_IVR + context_image.png">
+        </figure>
+        <p>Ici nous préparons 2 utilisateurs pour tester l'IVR</p>
+        <p>maintenant, la partie principale, modifier le fichier d'extensions</p>
+        <figure
+        class="image">
+          <img src="2_IVR + context_image.png">
+          </figure>
+          <p>ici nous pouvons voir que le context pour l'IVR est créer [context] =
+            début d'un context</p>
+          <p>Ensuite, l'ordre dans le quel les phrases sont prononcées par l'ivr</p>
+          <p>ne pas oublier les Goto, numéro de la touche, ordre de priorité, Aller
+            à, context du numéro, le numéro,1)</p>
+          <p>&nbsp;</p>
+          <p>Nous pouvons créer une conférence à partir d'un context</p>
+          <p>[conf]</p>
+          <p>&nbsp;</p>
+      </div>
+    </div>
+  </body>
+
+</html>

@@ -1,0 +1,48 @@
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../style.css">
+    <base target="_parent">
+    <title data-trilium-title>SySprep</title>
+  </head>
+  
+  <body>
+    <div class="content">
+       <h1 data-trilium-h1>SySprep</h1>
+
+      <div class="ck-content">
+        <p>Source : <a href="https://rdr-it.com/windows-realiser-un-sysprep/">https://rdr-it.com/windows-realiser-un-sysprep/</a>
+        </p>
+        <h2 style="margin-left:0px;">Réaliser le sysprep</h2>
+        <p style="margin-left:0px;">1. Ouvrir une invite de commande en administrateur.</p>
+        <p style="margin-left:0px;">2. Entrer la ligne de commande suivante :</p><pre><code class="language-text-plain">C:\Windows\System32\sysprep\sysprep.exe /oobe /generalize /shutdown	</code></pre>
+        <h3
+        style="margin-left:0px;">Explication de la commande :</h3>
+          <blockquote>
+            <p style="margin-left:0px;"><i>C:\Windows\System32\sysprep\sysprep.exe : exécution de l’utilitaire sysprep.exe</i>
+            </p>
+            <p style="margin-left:0px;"><i>/oobe : Out-Of-Box Experience lance la séquence de personnalisation de Windows.</i>
+            </p>
+            <p style="margin-left:0px;"><i>/generalize : permet le déploiement de Windows sur d’autre type de matériel</i>
+            </p>
+            <p style="margin-left:0px;"><i>/shutdown : éteint l’ordinateur</i>
+            </p>
+          </blockquote>
+          <p style="margin-left:0px;">&nbsp;</p>
+          <p style="margin-left:0px;">Cloner la VM voulu : Clique droit , Manage , Clone , full clone</p>
+          <p
+          style="margin-left:0px;"><span class="text-big" style="color:hsl(240,75%,60%);"><strong>Exécuter le sysprep en entrant la ligne suivante si 1001 image déployé &nbsp;:&nbsp;</strong></span>
+            </p>
+            <p style="margin-left:0px;"><span class="text-big" style="color:hsl(240,75%,60%);"><strong>(mettre les lignes avant : )</strong></span>
+            </p>
+            <p style="margin-left:0px;">Créer un fichier Unattend.xml dans le dossier C:\Windows\System32\Sysprep
+              et copier le contenu ci-dessous.</p>
+            <p style="margin-left:0px;"><span style="background-color:rgba(0,0,0,0.05);color:rgb(32,128,173);">&lt;?xml version="1.0" encoding="utf-8"?&gt; &lt;unattend xmlns="urn:schemas-microsoft-com:unattend"&gt; &lt;settings pass="generalize"&gt; &lt;component name="Microsoft-Windows-Security-Licensing-SLC" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt; &lt;SkipRearm&gt;1&lt;/SkipRearm&gt; &lt;/component&gt; &lt;component name="Microsoft-Windows-Security-Licensing-SLC" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt; &lt;SkipRearm&gt;1&lt;/SkipRearm&gt; &lt;/component&gt; &lt;/settings&gt; &lt;cpi:offlineImage cpi:source="catalog://poin18/cd$sources/install_windows 7 professional.clg" xmlns:cpi="urn:schemas-microsoft-com:cpi" /&gt; &lt;/unattend&gt;</span>
+            </p><pre><code class="language-text-plain">C:\Windows\System32\sysprep\sysprep.exe /unattend:C:\Windows\System32\sysprep\Unattend.xml /oobe /generalize /shutdown</code></pre>
+      </div>
+    </div>
+  </body>
+
+</html>
