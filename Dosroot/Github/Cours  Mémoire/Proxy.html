@@ -1,0 +1,56 @@
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../style.css">
+    <base target="_parent">
+    <title data-trilium-title>Proxy</title>
+  </head>
+  
+  <body>
+    <div class="content">
+       <h1 data-trilium-h1>Proxy</h1>
+
+      <div class="ck-content">
+        <h3>Proxy</h3>
+        <p>Un proxy, ou serveur mandataire, agit comme un intermédiaire entre les
+          clients (utilisateurs) et les serveurs. Son rôle principal est de faire
+          office de passerelle entre les demandes des clients et les ressources disponibles
+          sur les serveurs. Voici quelques points clés :</p>
+        <p><strong>Fonctionnement :</strong> Lorsqu'un client envoie une requête vers
+          un serveur à travers un proxy, cette requête est interceptée par le proxy.
+          Le proxy traite ensuite la requête au nom du client et envoie la demande
+          au serveur cible.</p>
+        <p><strong>Utilisation :</strong> Les proxies sont couramment utilisés pour
+          contrôler et filtrer le trafic web, améliorer les performances (mise en
+          cache), ou encore pour contourner les restrictions d'accès géographiques
+          (comme dans le cas des VPN).</p>
+        <p><strong>Anonymat :</strong> Certains proxies peuvent également masquer
+          l'adresse IP du client, améliorant ainsi l'anonymat lors de la navigation
+          sur Internet.</p>
+        <p>&nbsp;</p>
+        <h3>Reverse-Proxy</h3>
+        <p>Un reverse-proxy fonctionne essentiellement de la même manière qu'un proxy
+          traditionnel, mais avec une différence cruciale : il agit du côté du serveur,
+          en tant que point d'entrée centralisé pour les clients. Voici comment il
+          se distingue :</p>
+        <p><strong>Fonctionnement :</strong> Lorsqu'un client envoie une requête vers
+          un serveur protégé par un reverse-proxy, la requête est d'abord reçue par
+          le reverse-proxy. Celui-ci décide ensuite comment router la requête vers
+          les serveurs en aval, en fonction de règles configurées telles que la charge
+          de travail, la disponibilité des serveurs, etc.</p>
+        <p><strong>Utilisation :</strong> Les reverse-proxies sont utilisés principalement
+          pour améliorer la sécurité, la performance et la gestion des services web.
+          Ils peuvent fournir des fonctionnalités avancées telles que la mise en
+          cache, l'équilibrage de charge (load balancing), la terminaison SSL (pour
+          sécuriser les connexions HTTPS), la compression de données, etc.</p>
+        <p><strong>Sécurité :</strong> En agissant comme un point d'entrée unique,
+          un reverse-proxy peut également filtrer le trafic entrant, protégeant ainsi
+          les serveurs en aval contre les attaques potentielles comme les attaques
+          DDoS (Distributed Denial of Service).</p>
+      </div>
+    </div>
+  </body>
+
+</html>

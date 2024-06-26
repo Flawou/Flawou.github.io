@@ -23,21 +23,31 @@
         <figure class="image image-style-block-align-left">
           <img src="SSH Secure_image.png">
         </figure>
-        <p>Pour créer nos clés de sécurités SSH :&nbsp;</p>
-        <p>ssh-keygen (<span style="color:hsl(0, 75%, 60%);">NON CONNECTER SSH</span>)</p>
-        <figure
-        class="image image-style-block-align-left">
+        <p>Pour créer nos clés de sécurités SSH :&nbsp;
+          <br>Sur client :&nbsp;</p>
+        <p>ssh-keygen (<span style="color:hsl(0,75%,60%);">NON CONNECTER SSH</span>)</p>
+        <p>type C:\Users\Flaw\.ssh\id_rsa.pub (pour copier la clé)&nbsp;</p>
+        <p>ssh -i $env:USERPROFILE\.ssh\id_rsa user@192.168.0.30 &nbsp;← POUR WINDOWS</p>
+        <p>puis on se connecte en ssh sur le compte utilisateur, aller dans .ssh\authorized_keys&nbsp;
+          <br>nano ~/.ssh/authorized_keys &nbsp;Puis coller la clé de notre utilisateur
+          windows</p>
+        <p>si .ssh pas créer faire : mkdir -p ~/.ssh &nbsp; &nbsp; &nbsp; puis &nbsp;chmod
+          700 ~/.ssh&nbsp;
+          <br>
+          <br>une fois cette étape terminer nous pouvons nous connecter sans pw :</p>
+        <p>ssh -i C:\Users\Flaw\.ssh\id_rsa user@192.168.0.30</p>
+        <figure class="image image-style-block-align-left">
           <img src="1_SSH Secure_image.png">
-          </figure>
-          <p>ssh-copy-id user@192.168.X.X (NON CONNECTER SSH)</p>
-          <p>changer le port d'écoute</p>
-          <p>PermitRootLogin no</p>
-          <p>nano /etc/ssh/sshd_config</p>
-          <p>décommentez Port 22</p>
-          <p>modifier le port ( exemple 2222)</p>
-          <p>depuis client pour s'y connecter : ssh user@192.168.217.10 -p 2222</p>
-          <p>allowUsers user1</p>
-          <p>&nbsp;</p>
+        </figure>
+        <p>ssh-copy-id user@192.168.X.X (NON CONNECTER SSH) &nbsp;← POUR LINUX
+          <br>nano /etc/ssh/sshd_config</p>
+        <p>changer le port d'écoute</p>
+        <p>PermitRootLogin no</p>
+        <p>décommentez Port 22</p>
+        <p>modifier le port ( exemple 2222)</p>
+        <p>depuis client pour s'y connecter : ssh user@192.168.217.10 -p 2222</p>
+        <p>allowUsers user1</p>
+        <p>&nbsp;</p>
       </div>
     </div>
   </body>

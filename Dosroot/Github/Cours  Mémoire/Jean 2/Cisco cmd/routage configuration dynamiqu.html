@@ -1,0 +1,48 @@
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../../../style.css">
+    <base target="_parent">
+    <title data-trilium-title>routage configuration dynamique</title>
+  </head>
+  
+  <body>
+    <div class="content">
+       <h1 data-trilium-h1>routage configuration dynamique</h1>
+
+      <div class="ck-content">
+        <p><span style="color:hsl(0, 0%, 100%);">enable</span>
+        </p>
+        <p><span style="color:hsl(0, 0%, 100%);">conf t</span>
+        </p>
+        <p><span style="color:hsl(0, 0%, 100%);">router rip</span>
+        </p>
+        <p><span style="color:hsl(0, 0%, 100%);">version 2</span>
+        </p>
+        <p><span style="color:hsl(0, 0%, 100%);">network X.X.X.X&nbsp;</span>
+        </p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p><span style="color:hsl(0, 0%, 100%);">POUR OPSF:</span>
+        </p>
+        <p><span style="color:hsl(0, 0%, 100%);">router ospf 10</span>
+        </p>
+        <p><span style="color:hsl(0, 0%, 100%);">router-id x.x.x.x</span>
+        </p>
+        <p><span style="color:hsl(0, 0%, 100%);">network ipinterface 0.0.0.0 area 0</span>
+        </p>
+        <p><span style="color:hsl(0, 0%, 100%);">network ipréseaux masqueinverser area 0</span>
+        </p>
+        <p><span style="color:hsl(0, 0%, 100%);">default-information originate (envoie la config route lastgateway aux autres ospf)</span>
+        </p>
+        <p><span style="color:hsl(0, 0%, 100%);">passive-interface interface-non-ospf</span>
+        </p>
+        <p><span style="color:hsl(0, 0%, 100%);">Aide : show ip ospf neighbor</span>
+        </p>
+      </div>
+    </div>
+  </body>
+
+</html>

@@ -18,16 +18,16 @@
           alt="cours-active-directory-23">
         </figure>
         <ol>
-          <li><span class="text-big" style="color:hsl(0, 75%, 60%);"><strong>Maître d'attribution</strong></span>:Le
+          <li><span class="text-big" style="color:hsl(0,75%,60%);"><strong>Maître d'attribution FORET</strong></span>:Le
             maître d’opération qui détient ce rôle est unique au sein de la forêt,
             et il est le seul autorisé à distribuer des noms de domaine aux contrôleurs
             de domaine, lors de la création d’un nouveau domaine. Il a également pour
             mission de renommer les noms de domaine.</li>
-          <li>&nbsp;<span class="text-big" style="color:hsl(0, 75%, 60%);"><strong>Contrôleur de Schéma</strong></span>:Seul
+          <li>&nbsp;<span class="text-big" style="color:hsl(0,75%,60%);"><strong>Contrôleur de Schéma FORET</strong></span>:Seul
             contrôleur de domaine à pouvoir initier des changements au niveau de la
             structure de l’annuaire (schéma). <strong>il est unique au sein d’une forêt et gère la structure du schéma.</strong>
           </li>
-          <li><span class="text-big" style="color:hsl(0, 75%, 60%);"><strong>Maître RID</strong></span><strong>:</strong>Le
+          <li><span class="text-big" style="color:hsl(0,75%,60%);"><strong>Maître RID DOMAINE</strong></span><strong>:</strong>Le
             RID est un identifiant relatif qui est unique au sein de chaque SID, afin
             d’être sûr d’avoir un SID unique pour chaque objet de l’annuaire.ce maître
             d’opération devra allouer des blocs d’identificateurs relatifs à chaque
@@ -37,14 +37,14 @@
             d’épuisement de son stock de RID disponible contactera le Maître RID pour
             en obtenir des nouveaux. Cela implique que la création d’un objet est impossible
             si le Maître RID du domaine n’est pas disponible</li>
-          <li><span class="text-big" style="color:hsl(0, 75%, 60%);"><strong>Maître d'infrastructure</strong></span>:Si
+          <li><span class="text-big" style="color:hsl(0,75%,60%);"><strong>Maître d'infrastructure DOMAINE</strong></span>:Si
             un objet est modifié ou supprimé à l’avenir, le Maître d’infrastructure
             devra se charger de déclencher la mise à jour de l’objet fantôme auprès
             des autres contrôleurs de domaine. En quelque sorte, il accélère les processus
             de réplication et la communication entre les contrôleurs de domaine, il
             est unique au sein d’un domaine et doit gérer les références d’objets au
             sein du domaine.</li>
-          <li><span class="text-big" style="color:hsl(0, 75%, 60%);"><strong>Emulateur PDC</strong></span>:
+          <li><span class="text-big" style="color:hsl(0,75%,60%);"><strong>Emulateur PDC DOMAIN</strong></span>:
             L’émulateur PDC (<i>Primary Domain Controller</i>) est unique au sein d’un
             domaine et se doit d’assurer cinq missions principale :&nbsp;
             <ol>

@@ -1,0 +1,59 @@
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../../../style.css">
+    <base target="_parent">
+    <title data-trilium-title>Installation</title>
+  </head>
+  
+  <body>
+    <div class="content">
+       <h1 data-trilium-h1>Installation</h1>
+
+      <div class="ck-content">
+        <p>Sur une Debian 12 T</p>
+        <p>On commence par :</p><pre><code class="language-text-plain">apt update &amp;&amp; apt upgrade -y</code></pre>
+        <p>Puis on install :</p><pre><code class="language-text-plain">apt install -y apache2 mariadb-server php8.2 php8.2-common php8.2-curl php8.2-gd php8.2-intl php8.2-mbstring php8.2-xmlrpc php8.2-mysql php8.2-xml php8.2-cli php8.2-zip
+a2enmod php8.2 wget </code></pre>
+        <p>On va venir enable &amp; lancé apache2</p><pre><code class="language-text-plain">systemctl enable apache2
+systemctl start apache2</code></pre>
+        <p>On va faire une installation sécurisé</p><pre><code class="language-text-plain">mysql_secure_installation</code></pre>
+        <p>Puis on va venir crée la base donnée et l'utilisateur “Nextcloud”</p><pre><code class="language-text-plain">mysql -u root -p</code></pre><pre><code class="language-text-plain">CREATE DATABASE nextcloud;</code></pre><pre><code class="language-text-plain">GRANT ALL PRIVILEGES ON nextcloud.* TO 'nextcloud'@'localhost' IDENTIFIED BY 'password';</code></pre><pre><code class="language-text-plain">FLUSH PRIVILEGES;</code></pre><pre><code class="language-text-plain">EXIT;</code></pre>
+        <p>On va ensuite venir télécharger la dernière version de “Nextcloud”</p><pre><code class="language-text-plain">wget https://download.nextcloud.com/server/releases/latest.zip</code></pre>
+        <p>On va venir installer “unzip”</p><pre><code class="language-text-plain">apt install unzip</code></pre>
+        <p>Puis dézippé notre packet télécharger dans le fichier localisé dans /var/www/html/</p><pre><code class="language-text-plain">unzip latest.zip -d /var/www/html/</code></pre>
+        <p>On vient accordé les permission nécessaire&nbsp;</p><pre><code class="language-text-plain">chown -R www-data:www-data /var/www/html/nextcloud/</code></pre><pre><code class="language-text-plain">chmod -R 755 /var/www/html/nextcloud/</code></pre>
+        <p>Puis on vient modifier le fichier .conf de nextcloud</p><pre><code class="language-text-plain">nano /etc/apache2/sites-available/nextcloud.conf</code></pre>
+        <p>On va venir mettre cette configuration : (facultatif)</p><pre><code class="language-text-plain">&lt;VirtualHost *:80&gt;
+  ServerAdmin admin@example.com
+  DocumentRoot /var/www/html/nextcloud/
+  ServerName your-domain.com
+
+  Alias /nextcloud "/var/www/html/nextcloud/"
+
+  &lt;Directory /var/www/html/nextcloud/&gt;
+    Options +FollowSymlinks
+    AllowOverride All
+    Require all granted
+    &lt;IfModule mod_dav.c&gt;
+      Dav off
+    &lt;/IfModule&gt;
+  &lt;/Directory&gt;
+
+  ErrorLog ${APACHE_LOG_DIR}/nextcloud_error.log
+  CustomLog ${APACHE_LOG_DIR}/nextcloud_access.log combined
+&lt;/VirtualHost&gt;</code></pre>
+        <p>Il nous reste a démarrer les services :</p><pre><code class="language-text-plain">a2ensite nextcloud
+</code></pre><pre><code class="language-text-plain">a2enmod rewrite
+</code></pre><pre><code class="language-text-plain">systemctl restart apache2</code></pre>
+        <p>&nbsp;</p>
+        <p>Il suffit de ce rendre sur notre adresse ip suivis “/nextcloud” "exemple
+          : 192.168.50.101/nextcloud"</p>
+        <p>&nbsp;</p>
+      </div>
+    </div>
+  </body>
+
+</html>

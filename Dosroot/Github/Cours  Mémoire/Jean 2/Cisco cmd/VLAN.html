@@ -13,25 +13,50 @@
        <h1 data-trilium-h1>VLAN</h1>
 
       <div class="ck-content">
-        <p>#configuration générale/configuration vlan/configuration etc</p>
-        <p>enable&nbsp;</p>
-        <p>conf t</p>
-        <p>interface ID vlan fa0/1</p>
-        <p>exemple : interface vlan 10 fa0/1</p>
-        <p>interface range&nbsp;</p>
-        <p>switchport mode access
-          <br>switchport access vlan ID (besoin du mode accès pour prise en compte,
-          mode agrégat = pas de vlan)</p>
-        <p>exemple : switch port access vlan 10</p>
-        <p>Nouveau switch (neuf) = mode access de base</p>
+        <p><span style="color:hsl(0, 0%, 90%);">#configuration générale/configuration vlan/configuration etc</span>
+        </p>
+        <p><span style="color:hsl(0, 0%, 90%);">enable&nbsp;</span>
+        </p>
+        <p><span style="color:hsl(0, 0%, 90%);">conf t</span>
+        </p>
+        <p><span style="color:hsl(0, 0%, 90%);">interface range fa0/1-12</span>
+        </p>
+        <p><span style="color:hsl(0, 0%, 90%);">switchport mode access</span>
+          <br><span style="color:hsl(0, 0%, 90%);">switchport access vlan ID (besoin du mode accès pour prise en compte, mode agrégat = pas de vlan)</span>
+        </p>
+        <p><span style="color:hsl(0, 0%, 90%);">exemple : switch port access vlan 10</span>
+        </p>
+        <p><span style="color:hsl(0, 0%, 90%);">sécurisé : interface range all</span>
+        </p>
+        <p><span style="color:hsl(0, 0%, 90%);">sécurisé : switchport nonegociate</span>
+          <br><span style="color:hsl(0, 0%, 90%);">sécurisé : switchport access vlan 666</span>
+        </p>
+        <p><span style="color:hsl(0, 0%, 90%);">sécurisé : switchport trunk native vlan 421</span>
+        </p>
+        <p><span style="color:hsl(0, 0%, 90%);">Nouveau switch (neuf) = mode access de base</span>
+        </p>
         <p>&nbsp;</p>
-        <p>switchport mode dynamic (adaptative)</p>
-        <p>switchport mode trunk (trunk to trunk only)</p>
-        <p>802.1q = Protocole vlan</p>
+        <p><span style="color:hsl(0, 0%, 90%);">switchport mode dynamic (adaptative)</span>
+        </p>
+        <p><span style="color:hsl(0, 0%, 90%);">switchport mode trunk (trunk to trunk only)</span>
+        </p>
+        <p><span style="color:hsl(0, 0%, 90%);">802.1q = Protocole vlan</span>
+        </p>
+        <p><span style="color:hsl(0, 0%, 90%);">show interface vlan brief</span>
+        </p>
+        <p style="margin-left:0px;"><span style="color:hsl(0, 0%, 90%);">show interface fa0/12 switchport</span>
+        </p>
+        <p><span style="color:hsl(0, 0%, 90%);">Password = Non chiffré</span>
+        </p>
+        <p><span style="color:hsl(0, 0%, 90%);">Secret = Chiffré</span>
+        </p>
+        <p><span style="color:hsl(0, 0%, 90%);">SSH &gt; IP &gt; port ??</span>
+        </p>
         <p>&nbsp;</p>
-        <p>Password = Non chiffré</p>
-        <p>Secret = Chiffré</p>
-        <p>SSH &gt; IP &gt; port ??</p>
+        <p><span style="color:hsl(0, 0%, 90%);">préparation à l'avance :</span>
+        </p>
+        <p><span style="color:hsl(0, 0%, 90%);">switchport trunk allowed vlan 1,10,20</span>
+        </p>
         <p>&nbsp;</p>
       </div>
     </div>
